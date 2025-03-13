@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="Join the Bug Matrix team and help shape the future of software testing tools. Explore career opportunities with us.">
+    <meta name="keywords" content="Bug Matrix, careers, jobs, software testing, QA jobs, tech careers, employment">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Careers | Bug Matrix - SQA Testing Tools Hub">
+    <meta property="og:description" content="Join the Bug Matrix team and help shape the future of software testing tools. Explore career opportunities with us.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/careers.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .careers-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .careers-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .careers-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .careers-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .careers-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .careers-content {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .careers-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .careers-container h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .careers-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 3px;
+        }
+        
+        .careers-container h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .careers-container p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        .no-positions {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+        
+        .no-positions i {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .no-positions h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .no-positions p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .future-positions {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .future-positions h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .position-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .position-category {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            width: 220px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .position-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .position-category i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .position-category h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .position-category p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        
+        .alert-form {
+            max-width: 600px;
+            margin: 50px auto 0;
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .alert-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+        
+        .form-submit {
+            text-align: center;
+        }
+        
+        .values-section {
+            margin-top: 80px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .careers-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1rem;
+            }
+            
+            .careers-container {
+                padding: 30px;
+            }
+            
+            .position-categories {
+                gap: 15px;
+            }
+            
+            .position-category {
+                width: calc(50% - 15px);
+                padding: 20px;
+            }
+            
+            .value-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                <span>Bug Matrix</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="careers-hero">
+        <div class="careers-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Join Our Team</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Be part of a passionate team dedicated to revolutionizing software testing tools and making testers' lives easier.</p>
+        </div>
+    </section>
+
+    <section class="careers-content">
+        <div class="container">
+            <div class="careers-container">
+                <h2>Current Openings</h2>
+                <p>We're always looking for talented individuals who are passionate about software testing and technology.</p>
+                
+                <div class="no-positions animate__animated animate__fadeIn">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>No Positions Currently Available</h3>
+                    <p>We don't have any open positions at the moment, but we're growing fast! Check back soon or sign up for job alerts to be notified when new opportunities become available.</p>
+                    <a href="#job-alerts" class="btn primary-btn">
+                        <i class="fas fa-bell"></i> Get Job Alerts
+                    </a>
+                </div>
+                
+                <div class="future-positions">
+                    <h3>Future Opportunities</h3>
+                    <p>While we don't have any open positions right now, we frequently hire in these areas:</p>
+                    
+                    <div class="position-categories">
+                        <div class="position-category animate__animated animate__fadeInUp animate__delay-1s">
+                            <i class="fas fa-code"></i>
+                            <h4>Software Development</h4>
+                            <p>Frontend, Backend, and Full-Stack Engineers</p>
+                        </div>
+                        <div class="position-category animate__animated animate__fadeInUp animate__delay-2s">
+                            <i class="fas fa-bug"></i>
+                            <h4>Quality Assurance</h4>
+                            <p>Manual and Automation Test Engineers</p>
+                        </div>
+                        <div class="position-category animate__animated animate__fadeInUp animate__delay-3s">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Security</h4>
+                            <p>Security Engineers and Penetration Testers</p>
+                        </div>
+                        <div class="position-category animate__animated animate__fadeInUp animate__delay-4s">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Design</h4>
+                            <p>UI/UX Designers and Product Designers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert-form" id="job-alerts">
+                    <h3>Get Job Alerts</h3>
+                    <p>Sign up to receive notifications when new positions become available.</p>
+                    
+                    <form id="job-alert-form" action="https://formspree.io/f/info@sqatesting.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-category">Job Category</label>
+                            <select id="job-category" name="job-category" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="development">Software Development</option>
+                                <option value="qa">Quality Assurance</option>
+                                <option value="security">Security</option>
+                                <option value="design">Design</option>
+                                <option value="all">All Categories</option>
+                            </select>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn primary-btn">
+                                <i class="fas fa-paper-plane"></i> Subscribe to Alerts
+                            </button>
+                        </div>
+                    </form>
+                    <div id="job-alert-success" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Subscription Successful!</h3>
+                        <p>Thank you for subscribing to our job alerts. We'll notify you when new positions become available.</p>
+                    </div>
+                </div>
+                
+                <div class="values-section">
+                    <h2>Our Values</h2>
+                    <p>At Bug Matrix, we believe in creating an environment where everyone can thrive and do their best work.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-card animate__animated animate__fadeIn">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Innovation</h3>
+                            <p>We encourage creative thinking and bold ideas to solve complex problems.</p>
+                        </div>
+                        <div class="value-card animate__animated animate__fadeIn animate__delay-1s">
+                            <i class="fas fa-users"></i>
+                            <h3>Collaboration</h3>
+                            <p>We work together across teams to achieve our shared mission.</p>
+                        </div>
+                        <div class="value-card animate__animated animate__fadeIn animate__delay-2s">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Integrity</h3>
+                            <p>We're honest, transparent, and committed to doing what's right.</p>
+                        </div>
+                        <div class="value-card animate__animated animate__fadeIn animate__delay-3s">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Excellence</h3>
+                            <p>We strive for excellence in everything we do, from code to customer service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobAlertForm = document.getElementById('job-alert-form');
+            
+            if (jobAlertForm) {
+                jobAlertForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const category = document.getElementById('job-category').value;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Show success message
+                        showNotification('Success! You\'ll receive job alerts for ' + category + ' positions.', 'success');
+                        
+                        // Reset form
+                        jobAlertForm.reset();
+                    }, 1000);
+                });
+            }
+            
+            // Notification function
+            function showNotification(message, type) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = 'notification ' + type;
+                
+                // Create icon based on type
+                const icon = document.createElement('i');
+                icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+                
+                // Create message element
+                const messageEl = document.createElement('span');
+                messageEl.textContent = message;
+                
+                // Append elements
+                notification.appendChild(icon);
+                notification.appendChild(messageEl);
+                
+                // Add to document
+                document.body.appendChild(notification);
+                
+                // Show notification
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                // Remove notification after 5 seconds
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html> 

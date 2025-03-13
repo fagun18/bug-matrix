@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="View the complete changelog for Bug Matrix. Stay updated with the latest features, improvements, and bug fixes.">
+    <meta name="keywords" content="Bug Matrix, changelog, updates, version history, release notes, software testing, QA tools">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Changelog | Bug Matrix - SQA Testing Tools Hub">
+    <meta property="og:description" content="View the complete changelog for Bug Matrix. Stay updated with the latest features, improvements, and bug fixes.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/changelog.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .changelog-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .changelog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .changelog-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .changelog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .changelog-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .changelog-section {
+            padding: 80px 0;
+        }
+        
+        .changelog-item {
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .changelog-item:last-child {
+            border-bottom: none;
+        }
+        
+        .changelog-version {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .changelog-version h3 {
+            margin: 0;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        .changelog-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .changelog-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .badge-feature {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge-improvement {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .badge-bugfix {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .changelog-list {
+            margin-top: 20px;
+        }
+        
+        .changelog-list h4 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .changelog-list ul {
+            padding-left: 20px;
+        }
+        
+        .changelog-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .changelog-list li::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="changelog-hero">
+        <div class="changelog-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Changelog</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Stay updated with the latest features, improvements, and bug fixes for Bug Matrix.</p>
+        </div>
+    </section>
+
+    <section class="changelog-section">
+        <div class="container">
+            <div class="changelog-item">
+                <div class="changelog-version">
+                    <h3>Version 2.3.0</h3>
+                    <span class="changelog-date">May 13, 2025</span>
+                    <span class="changelog-badge badge-feature">Major Release</span>
+                </div>
+                <p>This major update introduces several new features and improvements to enhance your testing experience.</p>
+                <div class="changelog-list">
+                    <h4>New Features</h4>
+                    <ul>
+                        <li>Added AI-powered test case generation based on user requirements</li>
+                        <li>Introduced dark mode support for better visibility in low-light environments</li>
+                        <li>Added support for custom testing templates and workflows</li>
+                        <li>Implemented real-time collaboration features for team testing</li>
+                    </ul>
+                </div>
+                <div class="changelog-list">
+                    <h4>Improvements</h4>
+                    <ul>
+                        <li>Enhanced performance for large test suites, reducing load time by 40%</li>
+                        <li>Improved UI/UX for better navigation and accessibility</li>
+                        <li>Updated documentation with more examples and use cases</li>
+                    </ul>
+                </div>
+                <div class="changelog-list">
+                    <h4>Bug Fixes</h4>
+                    <ul>
+                        <li>Fixed issue with test report generation in Firefox browsers</li>
+                        <li>Resolved synchronization problems when working offline</li>
+                        <li>Fixed memory leak in the performance testing module</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="changelog-item">
+                <div class="changelog-version">
+                    <h3>Version 2.2.2</h3>
+                    <span class="changelog-date">April 3, 2025</span>
+                    <span class="changelog-badge badge-bugfix">Bug Fix</span>
+                </div>
+                <p>This release focuses on stability improvements and bug fixes.</p>
+                <div class="changelog-list">
+                    <h4>Bug Fixes</h4>
+                    <ul>
+                        <li>Fixed critical issue with data export functionality</li>
+                        <li>Resolved compatibility issues with Chrome version 120+</li>
+                        <li>Fixed UI rendering problems on high-resolution displays</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="changelog-item">
+                <div class="changelog-version">
+                    <h3>Version 2.2.0</h3>
+                    <span class="changelog-date">March 10, 2025</span>
+                    <span class="changelog-badge badge-improvement">Feature Update</span>
+                </div>
+                <p>This update introduces several new features and improvements based on user feedback.</p>
+                <div class="changelog-list">
+                    <h4>New Features</h4>
+                    <ul>
+                        <li>Added support for API testing with GraphQL</li>
+                        <li>Introduced new security testing tools for vulnerability scanning</li>
+                        <li>Added integration with popular CI/CD platforms</li>
+                    </ul>
+                </div>
+                <div class="changelog-list">
+                    <h4>Improvements</h4>
+                    <ul>
+                        <li>Enhanced reporting capabilities with customizable dashboards</li>
+                        <li>Improved test case management with better categorization options</li>
+                        <li>Optimized resource usage for better performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="changelog-item">
+                <div class="changelog-version">
+                    <h3>Version 2.1.1</h3>
+                    <span class="changelog-date">February 5, 2025</span>
+                    <span class="changelog-badge badge-bugfix">Bug Fix</span>
+                </div>
+                <p>This release addresses several issues reported by our users.</p>
+                <div class="changelog-list">
+                    <h4>Bug Fixes</h4>
+                    <ul>
+                        <li>Fixed login issues with SSO authentication</li>
+                        <li>Resolved data synchronization problems between devices</li>
+                        <li>Fixed incorrect test results reporting in specific scenarios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="changelog-item">
+                <div class="changelog-version">
+                    <h3>Version 2.1.0</h3>
+                    <span class="changelog-date">January 15, 2025</span>
+                    <span class="changelog-badge badge-feature">Feature Update</span>
+                </div>
+                <p>Our first update of 2025 brings exciting new features to Bug Matrix.</p>
+                <div class="changelog-list">
+                    <h4>New Features</h4>
+                    <ul>
+                        <li>Introduced automated visual regression testing</li>
+                        <li>Added support for mobile device testing</li>
+                        <li>Implemented advanced test data generation tools</li>
+                    </ul>
+                </div>
+                <div class="changelog-list">
+                    <h4>Improvements</h4>
+                    <ul>
+                        <li>Enhanced user interface with more intuitive controls</li>
+                        <li>Improved test execution speed by 25%</li>
+                        <li>Added more templates for common testing scenarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                        <span>Bug Matrix</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

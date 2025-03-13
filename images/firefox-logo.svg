@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="firefox-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500"/>
+      <stop offset="100%" stop-color="#FF4E00"/>
+    </linearGradient>
+    <linearGradient id="firefox-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4E00"/>
+      <stop offset="100%" stop-color="#FF0039"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="45" fill="#fff"/>
+  <path d="M85,30 C80,15 65,5 50,5 C25,5 5,25 5,50 C5,75 25,95 50,95 C75,95 95,75 95,50 C95,45 94,40 92,35 L50,50 Z" fill="url(#firefox-gradient-1)"/>
+  <path d="M50,5 C65,5 80,15 85,30 L50,50 Z" fill="url(#firefox-gradient-2)"/>
+  <circle cx="30" cy="35" r="10" fill="#fff"/>
+</svg> 

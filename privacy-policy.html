@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="Bug Matrix's Privacy Policy outlines how we collect, use, and protect your personal information when you use our services.">
+    <meta name="keywords" content="Bug Matrix, privacy policy, data protection, personal information, cookies, GDPR">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Privacy Policy | Bug Matrix - SQA Testing Tools Hub">
+    <meta property="og:description" content="Bug Matrix's Privacy Policy outlines how we collect, use, and protect your personal information when you use our services.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/privacy-policy.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .policy-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .policy-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .policy-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .policy-content {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .policy-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-container h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .policy-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 3px;
+        }
+        
+        .policy-container h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .policy-container h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .policy-container p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        
+        .policy-container ul, 
+        .policy-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .policy-container li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        
+        .policy-container a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-container a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .policy-container .highlight-box {
+            background: rgba(66, 133, 244, 0.05);
+            border-left: 3px solid var(--primary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .policy-container .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .policy-container .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+        
+        .policy-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .policy-container th {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+        
+        .policy-container td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-muted);
+        }
+        
+        .policy-container tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .policy-container .last-updated {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .policy-toc {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+        
+        .policy-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .policy-toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .policy-toc li {
+            margin-bottom: 10px;
+        }
+        
+        .policy-toc a {
+            display: inline-block;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .policy-toc a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+        
+        .policy-toc a:hover::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .policy-hero p {
+                font-size: 1rem;
+            }
+            
+            .policy-container {
+                padding: 30px;
+            }
+            
+            .policy-container h2 {
+                font-size: 1.6rem;
+            }
+            
+            .policy-container h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                <span>Bug Matrix</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="policy-hero">
+        <div class="policy-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Privacy Policy</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">At Bug Matrix, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
+        </div>
+    </section>
+
+    <section class="policy-content">
+        <div class="container">
+            <div class="policy-container">
+                <div class="policy-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#information-collection">2. Information We Collect</a></li>
+                        <li><a href="#information-usage">3. How We Use Your Information</a></li>
+                        <li><a href="#information-sharing">4. Information Sharing and Disclosure</a></li>
+                        <li><a href="#cookies">5. Cookies and Similar Technologies</a></li>
+                        <li><a href="#data-security">6. Data Security</a></li>
+                        <li><a href="#user-rights">7. Your Rights and Choices</a></li>
+                        <li><a href="#children">8. Children's Privacy</a></li>
+                        <li><a href="#international-transfers">9. International Data Transfers</a></li>
+                        <li><a href="#changes">10. Changes to This Privacy Policy</a></li>
+                        <li><a href="#contact">11. Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="introduction">1. Introduction</h2>
+                <p>Welcome to Bug Matrix ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at <a href="https://bugmatrix.sqatesting.com">https://bugmatrix.sqatesting.com</a>, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site").</p>
+                
+                <p>Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site. By accessing or using our Site, you signify your consent to the terms of this Privacy Policy.</p>
+
+                <div class="highlight-box">
+                    <p>This Privacy Policy applies to all information collected through our Site, as well as any related services, sales, marketing, or events.</p>
+                </div>
+
+                <h2 id="information-collection">2. Information We Collect</h2>
+                <p>We collect information that you provide directly to us, information we obtain automatically when you use our Site, and information from third-party sources.</p>
+
+                <h3>Personal Information You Provide to Us</h3>
+                <p>We may collect personal information that you voluntarily provide to us when you:</p>
+                <ul>
+                    <li>Register for an account</li>
+                    <li>Express an interest in obtaining information about us or our products and services</li>
+                    <li>Participate in activities on the Site (such as posting comments or reviews)</li>
+                    <li>Contact us with inquiries or feedback</li>
+                    <li>Apply for a job or internship</li>
+                </ul>
+
+                <p>The personal information we collect may include:</p>
+                <ul>
+                    <li>Name, email address, and contact details</li>
+                    <li>Username and password</li>
+                    <li>Billing information and payment details</li>
+                    <li>Company information and job title</li>
+                    <li>User preferences and settings</li>
+                    <li>Any other information you choose to provide</li>
+                </ul>
+
+                <h3>Information We Collect Automatically</h3>
+                <p>When you access or use our Site, we may automatically collect certain information about your device and usage, including:</p>
+                <ul>
+                    <li>Device information (such as your IP address, browser type, operating system)</li>
+                    <li>Usage details (such as time and duration of your visit, pages viewed)</li>
+                    <li>Location information</li>
+                    <li>Information collected through cookies, web beacons, and other tracking technologies</li>
+                </ul>
+
+                <h2 id="information-usage">3. How We Use Your Information</h2>
+                <p>We may use the information we collect for various purposes, including to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve our Site and services</li>
+                    <li>Process transactions and send related information</li>
+                    <li>Send administrative information, such as updates, security alerts, and support messages</li>
+                    <li>Respond to your comments, questions, and requests</li>
+                    <li>Communicate with you about products, services, offers, and events</li>
+                    <li>Monitor and analyze trends, usage, and activities in connection with our Site</li>
+                    <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+                    <li>Personalize your experience on our Site</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Purpose</th>
+                                <th>Type of Data</th>
+                                <th>Legal Basis (EU/UK Users)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Providing our services</td>
+                                <td>Account information, usage data</td>
+                                <td>Performance of a contract</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing communications</td>
+                                <td>Contact information, preferences</td>
+                                <td>Legitimate interests/Consent</td>
+                            </tr>
+                            <tr>
+                                <td>Improving our services</td>
+                                <td>Usage data, feedback</td>
+                                <td>Legitimate interests</td>
+                            </tr>
+                            <tr>
+                                <td>Security and fraud prevention</td>
+                                <td>Account information, device data</td>
+                                <td>Legal obligation/Legitimate interests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="information-sharing">4. Information Sharing and Disclosure</h2>
+                <p>We may share your information in the following circumstances:</p>
+                <ul>
+                    <li><strong>With service providers:</strong> We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf.</li>
+                    <li><strong>For business transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                    <li><strong>With your consent:</strong> We may share your information with your consent or at your direction.</li>
+                    <li><strong>To comply with laws:</strong> We may disclose your information where required to do so by law or subpoena.</li>
+                    <li><strong>To protect rights:</strong> We may disclose your information to protect the rights, property, or safety of Bug Matrix, our users, or others.</li>
+                </ul>
+
+                <h2 id="cookies">5. Cookies and Similar Technologies</h2>
+                <p>We use cookies and similar tracking technologies to track activity on our Site and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device.</p>
+                
+                <p>We use the following types of cookies:</p>
+                <ul>
+                    <li><strong>Essential cookies:</strong> Necessary for the operation of our Site.</li>
+                    <li><strong>Analytical/performance cookies:</strong> Allow us to recognize and count the number of visitors and see how visitors move around our Site.</li>
+                    <li><strong>Functionality cookies:</strong> Enable us to personalize our content for you.</li>
+                    <li><strong>Targeting cookies:</strong> Record your visit to our Site, the pages you have visited, and the links you have followed.</li>
+                </ul>
+                
+                <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.</p>
+
+                <h2 id="data-security">6. Data Security</h2>
+                <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure.</p>
+
+                <div class="highlight-box">
+                    <p>We are committed to protecting your personal data, but we cannot guarantee absolute security. We encourage you to use complex passwords and to keep them confidential.</p>
+                </div>
+
+                <h2 id="user-rights">7. Your Rights and Choices</h2>
+                <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                <ul>
+                    <li><strong>Access:</strong> You may request access to your personal information.</li>
+                    <li><strong>Correction:</strong> You may request that we correct inaccurate or incomplete information.</li>
+                    <li><strong>Deletion:</strong> You may request that we delete your personal information.</li>
+                    <li><strong>Restriction:</strong> You may request that we restrict the processing of your information.</li>
+                    <li><strong>Data portability:</strong> You may request a copy of the information you provided to us in a structured, commonly used, and machine-readable format.</li>
+                    <li><strong>Objection:</strong> You may object to our reliance on our legitimate interests as the basis of our processing of your personal information.</li>
+                </ul>
+                
+                <p>To exercise these rights, please contact us using the contact information provided below. Please note that these rights may be limited in some circumstances by local law requirements.</p>
+
+                <h2 id="children">8. Children's Privacy</h2>
+                <p>Our Site is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us. If we become aware that we have collected personal information from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+                <h2 id="international-transfers">9. International Data Transfers</h2>
+                <p>Your information may be transferred to, and maintained on, computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction. If you are located outside the United States and choose to provide information to us, please note that we transfer the data to the United States and process it there.</p>
+                
+                <p>For users in the European Economic Area (EEA), we ensure that your personal data is protected when transferred outside the EEA by using appropriate safeguards, such as standard contractual clauses approved by the European Commission.</p>
+
+                <h2 id="changes">10. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+                <h2 id="contact">11. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <ul>
+                    <li>Email: <a href="mailto:info@sqatesting.com">info@sqatesting.com</a></li>
+                    <li>Website: <a href="https://bugmatrix.sqatesting.com/contact.html">Contact Form</a></li>
+                </ul>
+
+                <p class="last-updated">Last Updated: May 15, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="Explore the future of Bug Matrix. See our product roadmap and upcoming features planned for development.">
+    <meta name="keywords" content="Bug Matrix, roadmap, future features, development plan, software testing, QA tools">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Roadmap | Bug Matrix - SQA Testing Tools Hub">
+    <meta property="og:description" content="Explore the future of Bug Matrix. See our product roadmap and upcoming features planned for development.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/roadmap.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .roadmap-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .roadmap-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .roadmap-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .roadmap-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .roadmap-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .roadmap-section {
+            padding: 80px 0;
+        }
+        
+        .roadmap-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .roadmap-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+        
+        .roadmap-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: var(--card-bg);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .roadmap-left {
+            left: 0;
+        }
+        
+        .roadmap-right {
+            left: 50%;
+        }
+        
+        .roadmap-left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--border-color);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--border-color);
+        }
+        
+        .roadmap-right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--border-color);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--border-color) transparent transparent;
+        }
+        
+        .roadmap-right::after {
+            left: -12px;
+        }
+        
+        .roadmap-content {
+            padding: 30px;
+            background-color: var(--card-bg);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .roadmap-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .roadmap-date {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .roadmap-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .roadmap-content p {
+            margin-bottom: 15px;
+        }
+        
+        .roadmap-features {
+            margin-top: 20px;
+        }
+        
+        .roadmap-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .roadmap-features li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--primary-color);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .status-planned {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .status-progress {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        
+        .status-completed {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .roadmap-timeline::before {
+                left: 31px;
+            }
+            
+            .roadmap-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .roadmap-item::before {
+                left: 60px;
+                border: medium solid var(--border-color);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--border-color) transparent transparent;
+            }
+            
+            .roadmap-left::after, .roadmap-right::after {
+                left: 19px;
+            }
+            
+            .roadmap-right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="roadmap-hero">
+        <div class="roadmap-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Product Roadmap</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Explore our vision for the future of Bug Matrix and see what exciting features are coming next.</p>
+        </div>
+    </section>
+
+    <section class="roadmap-section">
+        <div class="container">
+            <h2 class="section-title">Our Development Journey</h2>
+            <p class="section-subtitle">We're constantly working to improve Bug Matrix based on user feedback and industry trends. Here's what we have planned for the future.</p>
+            
+            <div class="roadmap-timeline">
+                <div class="roadmap-item roadmap-left">
+                    <div class="roadmap-content">
+                        <span class="roadmap-date">Q3 2025</span>
+                        <h3>AI-Powered Testing Assistant <span class="status-badge status-planned">Planned</span></h3>
+                        <p>Introducing our most ambitious feature yet - an AI-powered testing assistant that will revolutionize how you approach software testing.</p>
+                        <div class="roadmap-features">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Natural language test case generation</li>
+                                <li><i class="fas fa-check-circle"></i> Automated bug pattern recognition</li>
+                                <li><i class="fas fa-check-circle"></i> Intelligent test prioritization</li>
+                                <li><i class="fas fa-check-circle"></i> Predictive analytics for test coverage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item roadmap-right">
+                    <div class="roadmap-content">
+                        <span class="roadmap-date">Q2 2025</span>
+                        <h3>Enhanced Collaboration Tools <span class="status-badge status-progress">In Progress</span></h3>
+                        <p>We're building powerful collaboration features to help testing teams work together more effectively, regardless of their location.</p>
+                        <div class="roadmap-features">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Real-time collaborative test editing</li>
+                                <li><i class="fas fa-check-circle"></i> Team dashboards and analytics</li>
+                                <li><i class="fas fa-check-circle"></i> Integrated chat and commenting system</li>
+                                <li><i class="fas fa-check-circle"></i> Role-based access controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item roadmap-left">
+                    <div class="roadmap-content">
+                        <span class="roadmap-date">Q1 2025</span>
+                        <h3>Mobile Testing Expansion <span class="status-badge status-completed">Completed</span></h3>
+                        <p>We've expanded our mobile testing capabilities to provide comprehensive support for all major mobile platforms and devices.</p>
+                        <div class="roadmap-features">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Native iOS and Android testing support</li>
+                                <li><i class="fas fa-check-circle"></i> Mobile-specific test templates</li>
+                                <li><i class="fas fa-check-circle"></i> Device farm integration</li>
+                                <li><i class="fas fa-check-circle"></i> Mobile performance metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item roadmap-right">
+                    <div class="roadmap-content">
+                        <span class="roadmap-date">Q4 2024</span>
+                        <h3>Advanced API Testing <span class="status-badge status-completed">Completed</span></h3>
+                        <p>We've enhanced our API testing capabilities to support modern API architectures and protocols.</p>
+                        <div class="roadmap-features">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> GraphQL support</li>
+                                <li><i class="fas fa-check-circle"></i> WebSocket testing</li>
+                                <li><i class="fas fa-check-circle"></i> API security scanning</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced response validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">Future Directions</h2>
+            <p class="section-subtitle">Beyond our current roadmap, here are some areas we're exploring for future development.</p>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Test Automation Framework</h3>
+                    <p>A comprehensive test automation framework that integrates with popular tools and provides a unified interface for managing automated tests.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Testing Suite</h3>
+                    <p>Advanced security testing tools to identify vulnerabilities, perform penetration testing, and ensure compliance with security standards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Performance Testing Hub</h3>
+                    <p>Comprehensive performance testing capabilities to measure load times, stress test applications, and identify performance bottlenecks.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Integration Ecosystem</h3>
+                    <p>Expanding our integration capabilities to connect with more development, CI/CD, and project management tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Help Shape Our Roadmap</h2>
+                <p>We value your input! Share your ideas and vote on upcoming features to help us prioritize our development efforts.</p>
+                <a href="community.html" class="btn primary-btn">Join the Discussion</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                        <span>Bug Matrix</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

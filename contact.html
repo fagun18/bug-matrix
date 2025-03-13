@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="Get in touch with the Bug Matrix team. We'd love to hear your feedback, answer your questions, or help you with any issues.">
+    <meta name="keywords" content="Bug Matrix, contact, support, feedback, software testing, QA tools">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Contact Bug Matrix | SQA Testing Tools Hub">
+    <meta property="og:description" content="Get in touch with the Bug Matrix team. We'd love to hear your feedback, answer your questions, or help you with any issues.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/contact.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .contact-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0 20 L40 20 M20 0 L20 40" stroke="%234285f4" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-form-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid;
+            border-image: var(--gradient-1) 1;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-form-container h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .contact-form-container h2::after {
+            margin-left: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+            background: white;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            text-align: right;
+        }
+        
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            border-right: 4px solid;
+            border-image: var(--gradient-2) 1;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-info h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h2::after {
+            margin-left: 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            background: rgba(248, 249, 250, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: var(--light-bg);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+        
+        .contact-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-10px) scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-links a:hover::after {
+            opacity: 1;
+        }
+        
+        .social-links a i {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            width: auto;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 300px;
+            transition: all 0.3s ease;
+        }
+        
+        .map-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-form-container h2,
+            .contact-info h2 {
+                text-align: center;
+            }
+            
+            .contact-form-container h2::after,
+            .contact-info h2::after {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .form-submit {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-form-container,
+            .contact-info {
+                padding: 30px;
+            }
+        }
+        
+        /* Success message styling */
+        .success-message {
+            display: none;
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success-message i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .success-message h3 {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .success-message p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                <span>Bug Matrix</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Get In Touch</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Have questions, feedback, or need support? We'd love to hear from you! Our team is here to help.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <div id="success-message" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" action="https://formspree.io/f/info@sqatesting.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="Bug Report">Bug Report</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn primary-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-info-container">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>📩 info@sqatesting.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <p><a href="https://sqatesting.com" target="_blank">🌐 https://sqatesting.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <p><a href="https://bugmatrix.sqatesting.com" target="_blank">💻 https://bugmatrix.sqatesting.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Support Hours: Monday - Friday, 9AM - 5PM EST</p>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043435496!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Send email using Formspree
+                    fetch('https://formspree.io/f/info@sqatesting.com', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            contactForm.style.display = 'none';
+                            successMessage.style.display = 'block';
+                            
+                            // Reset form
+                            contactForm.reset();
+                            
+                            // Hide success message after 5 seconds and show form again
+                            setTimeout(() => {
+                                successMessage.style.display = 'none';
+                                contactForm.style.display = 'block';
+                            }, 5000);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error sending your message. Please try again later.');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

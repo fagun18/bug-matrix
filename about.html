@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Bug Matrix | SQA Testing Tools Hub</title>
+    <meta name="description" content="Learn about Bug Matrix - the all-in-one browser extension for software testing. Our mission, team, and the story behind our innovative testing tool.">
+    <meta name="keywords" content="Bug Matrix, software testing, QA tools, testing extension, SQA testing">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="About Bug Matrix | SQA Testing Tools Hub">
+    <meta property="og:description" content="Learn about Bug Matrix - the all-in-one browser extension for software testing. Our mission, team, and the story behind our innovative testing tool.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/about.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 30px;
+            background-color: #f0f4ff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-container:hover {
+            transform: translateY(-10px);
+        }
+        
+        .logo-emoji {
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-right: 10px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content h2::after {
+            margin-left: 0;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-photo img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--light-bg);
+            color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 30px);
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            left: calc(50% + 30px);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            top: 0;
+            width: 120px;
+            padding: 8px 0;
+            background: var(--gradient-1);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: -150px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-date {
+            left: -150px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px rgba(66, 133, 244, 0.3);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -40px;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-content h2 {
+                text-align: center;
+            }
+            
+            .about-content h2::after {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                left: 80px !important;
+            }
+            
+            .timeline-date {
+                width: auto;
+                padding: 8px 15px;
+                top: -40px;
+                left: 0 !important;
+                right: auto !important;
+            }
+            
+            .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-emoji">🐞</span>
+                <span>Bug Matrix</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">About Bug Matrix</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">We're on a mission to revolutionize software testing by providing testers with the most comprehensive and accessible tools right at their fingertips.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="icon-container">
+                        <i class="fas fa-bullseye fa-10x" style="color: var(--primary-color);"></i>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>Our Mission</h2>
+                    <p>At Bug Matrix, we believe that quality software testing should be accessible to everyone. Our mission is to empower testers with intuitive, powerful tools that streamline the testing process and improve software quality.</p>
+                    <p>We're dedicated to creating solutions that save time, increase productivity, and make the testing process more efficient and enjoyable. By consolidating essential testing resources into one powerful browser extension, we're helping testers focus on what matters most: finding and fixing bugs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>Bug Matrix was born out of frustration. Our founders, experienced QA engineers, were tired of constantly switching between dozens of websites, tools, and resources during their testing workflows. They envisioned a single hub that would bring together all the essential testing tools in one place.</p>
+                    <p>What started as a simple side project quickly evolved into a comprehensive testing solution used by thousands of QA professionals worldwide. Today, Bug Matrix continues to grow and evolve based on feedback from our passionate community of testers.</p>
+                </div>
+                <div class="about-image">
+                    <div class="icon-container">
+                        <i class="fas fa-book-open fa-10x" style="color: var(--primary-color);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>The Idea</h3>
+                        <p>Our founders identified the need for a unified testing tool that would bring together all essential testing resources.</p>
+                    </div>
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>First Prototype</h3>
+                        <p>The first version of Bug Matrix was developed as a simple Chrome extension with basic testing tools.</p>
+                    </div>
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Public Beta</h3>
+                        <p>Bug Matrix was released as a public beta, gaining traction among early adopters in the testing community.</p>
+                    </div>
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Multi-Browser Support</h3>
+                        <p>Bug Matrix expanded to support Firefox and Edge browsers, reaching a wider audience of testers.</p>
+                    </div>
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>With users in over 50 countries, Bug Matrix continues to grow and evolve based on community feedback.</p>
+                    </div>
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Testing Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5.00</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-emoji" style="font-size: 2rem;">🐞</span>
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

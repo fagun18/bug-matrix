@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Bug Matrix</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to Bug Matrix - Your all-in-one browser extension for software testing.">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .error-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: float 6s ease-in-out infinite;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .error-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+        
+        .error-image {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-message {
+                font-size: 1.5rem;
+            }
+            
+            .error-description {
+                font-size: 1rem;
+            }
+            
+            .error-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="error-container">
+        <div class="error-content">
+            <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="error-image">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-message">Page Not Found</h2>
+            <p class="error-description">Oops! The page you're looking for seems to have disappeared into the digital void. Don't worry, even the best testers encounter unexpected bugs sometimes!</p>
+            <div class="error-buttons">
+                <a href="index.html" class="btn primary-btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="contact.html" class="btn secondary-btn">
+                    <i class="fas fa-envelope"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                        <span>Bug Matrix</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

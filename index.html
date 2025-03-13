@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Matrix 🐞 – SQA Testing Tools Hub</title>
+    <meta name="description" content="Bug Matrix is your all-in-one browser extension for software testing. Access essential testing tools, resources, and templates in one place.">
+    <meta name="keywords" content="Bug Matrix, software testing, QA tools, test automation, API testing, performance testing, security testing, browser extension">
+    <meta name="author" content="Bug Matrix Team">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/">
+    <meta property="og:title" content="Bug Matrix 🐞 – SQA Testing Tools Hub">
+    <meta property="og:description" content="Bug Matrix is your all-in-one browser extension for software testing. Access essential testing tools, resources, and templates in one place.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bugmatrix.sqatesting.com/">
+    <meta property="twitter:title" content="Bug Matrix 🐞 – SQA Testing Tools Hub">
+    <meta property="twitter:description" content="Bug Matrix is your all-in-one browser extension for software testing. Access essential testing tools, resources, and templates in one place.">
+    <meta property="twitter:image" content="images/bug-matrix-logo.png">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bugmatrix.sqatesting.com/">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bug Matrix",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Windows, macOS, Linux, Chrome OS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Bug Matrix is your all-in-one browser extension that grants instant access to essential testing resources—right at your fingertips!",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "156"
+      }
+    }
+    </script>
+    <style>
+        /* Enhanced styles for a more colorful and advanced UI */
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --accent-color-2: #fbbc05;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --text-light: #f8f9fa;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+            --border-radius: 10px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --gradient-1: linear-gradient(135deg, #4285f4, #34a853);
+            --gradient-2: linear-gradient(135deg, #ea4335, #fbbc05);
+            --gradient-3: linear-gradient(135deg, #9c27b0, #4285f4);
+            --gradient-hero: linear-gradient(135deg, #4285f4 0%, #8ab4f8 50%, #34a853 100%);
+            --gradient-btn: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            --gradient-btn-hover: linear-gradient(135deg, #9c27b0 0%, #4285f4 100%);
+            --shadow-neon: 0 0 15px rgba(66, 133, 244, 0.5), 0 0 30px rgba(66, 133, 244, 0.3), 0 0 45px rgba(66, 133, 244, 0.1);
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-card-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero {
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+            padding: 180px 0 120px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="45" y="45" width="10" height="10" fill="white" opacity="0.05"/></svg>');
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 20%);
+            animation: pulse-bg 8s infinite alternate;
+        }
+        
+        @keyframes pulse-bg {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+            background-image: linear-gradient(135deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            animation: text-shimmer 3s infinite alternate;
+        }
+        
+        @keyframes text-shimmer {
+            0% {
+                background-position: -100px;
+            }
+            100% {
+                background-position: 100px;
+            }
+        }
+        
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow-neon);
+            animation: width-pulse 3s infinite alternate;
+        }
+        
+        @keyframes width-pulse {
+            0% { width: 100px; opacity: 0.7; }
+            100% { width: 200px; opacity: 1; }
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .primary-btn {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-btn);
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .primary-btn:hover {
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .primary-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-btn:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 80%;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+            transition: all 0.5s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .browsers {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .browsers::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="2" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .browser-logos {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .browser-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .browser-logo:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .browser-logo img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .browser-logo:hover img {
+            transform: scale(1.1);
+        }
+        
+        .browser-logo span {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.05"/></svg>');
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-btn);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-card-1);
+            z-index: 1;
+        }
+        
+        .feature-card:nth-child(2n)::before {
+            background: var(--gradient-card-2);
+        }
+        
+        .feature-card:nth-child(3n)::before {
+            background: var(--gradient-card-3);
+        }
+        
+        .feature-card:nth-child(4n)::before {
+            background: var(--gradient-card-4);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--quaternary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .feature-card:hover .feature-icon {
+            animation: pulse 1.5s infinite;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            position: relative;
+            padding-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover h3,
+        .feature-card:hover p {
+            color: var(--text-color);
+        }
+        
+        /* Floating animation for various elements */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Pulse animation for icons */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .browser-logos {
+                gap: 20px;
+            }
+            
+            .browser-logo img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        /* Additional modern UI enhancements */
+        body {
+            background-color: #f9f9f9;
+            background-image: 
+                radial-gradient(circle at 25% 5%, rgba(66, 133, 244, 0.05) 5%, transparent 8%),
+                radial-gradient(circle at 75% 80%, rgba(52, 168, 83, 0.05) 5%, transparent 8%);
+        }
+        
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-1);
+            z-index: -1;
+        }
+        
+        .feature-card:nth-child(2n)::before {
+            background: var(--gradient-2);
+        }
+        
+        .feature-card:nth-child(3n)::before {
+            background: var(--gradient-3);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-bg);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--primary-color);
+            color: white !important;
+            transform: rotateY(180deg);
+        }
+        
+        .feature-card:nth-child(2n):hover .feature-icon {
+            background: var(--accent-color);
+        }
+        
+        .feature-card:nth-child(3n):hover .feature-icon {
+            background: var(--secondary-color);
+        }
+        
+        /* Enhanced Buttons */
+        .primary-btn, .secondary-btn {
+            border-radius: 50px;
+            padding: 16px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .primary-btn::before, .secondary-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .primary-btn:hover, .secondary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .primary-btn:hover::before, .secondary-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Enhanced Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+        
+        /* Enhanced FAQ Section */
+        .faq-item {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .faq-question i {
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-item.active .faq-question i {
+            color: white;
+            transform: rotate(180deg);
+        }
+        
+        /* Enhanced Contact Form */
+        .contact-form {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group input, .form-group textarea {
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+        
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">🔍 One Extension, Limitless Testing Power</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Tired of switching between multiple websites and tools for software testing? Bug Matrix is your all-in-one browser extension that grants instant access to essential testing resources—right at your fingertips!</p>
+            <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="#download" class="primary-btn">Get Started</a>
+                <a href="#features" class="secondary-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image animate__animated animate__zoomIn animate__delay-1s">
+            <div class="hero-image-placeholder">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <section id="browsers" class="browsers">
+        <div class="container">
+            <h2 class="section-title">Available For All Major Browsers</h2>
+            <div class="browser-logos">
+                <a href="#" class="browser-logo">
+                    <img src="images/chrome-logo.svg" alt="Chrome Logo" class="pulse-animation">
+                    <span>For Chrome</span>
+                </a>
+                <a href="#" class="browser-logo">
+                    <img src="images/edge-logo.svg" alt="Edge Logo" class="pulse-animation">
+                    <span>For Edge</span>
+                </a>
+                <a href="#" class="browser-logo">
+                    <img src="images/firefox-logo.svg" alt="Firefox Logo" class="pulse-animation">
+                    <span>For Firefox</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <p class="section-subtitle">Bug Matrix combines essential testing tools and resources in one convenient browser extension.</p>
+            <div class="feature-cards">
+                <div class="feature-card floating">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Testing Toolkit</h3>
+                    <p>Access 100+ testing tools directly from your browser, including API testers, performance analyzers, and security scanners.</p>
+                </div>
+                <div class="feature-card floating" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Test Data Generator</h3>
+                    <p>Generate realistic test data for various scenarios, including names, emails, addresses, credit cards, and more.</p>
+                </div>
+                <div class="feature-card floating" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Template Library</h3>
+                    <p>Choose from a variety of test case templates, bug report formats, and testing checklists to streamline your workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Comprehensive Tool Categories</h3>
+                    <p>Access tools for manual testing, automation, API testing, performance testing, security testing, and more—all in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Learning Resources</h3>
+                    <p>Category-specific learning resources, tutorials, documentation, and guides for each testing discipline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Search</h3>
+                    <p>Search across all categories or within specific ones. Filter by tool name, description, or tags.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Favorites System</h3>
+                    <p>Save your most-used tools and categories for quick access to your favorite testing resources.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Tool Comparison</h3>
+                    <p>Compare features between testing tools to make informed decisions about which ones to use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h3>Notes</h3>
+                    <p>Add personal notes about tools and testing techniques. Save your experiences for future reference.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>OSINT & Reconnaissance</h3>
+                    <p>Gather intelligence about target websites. Discover subdomains, technologies, and other valuable information.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Dark Mode</h3>
+                    <p>Reduce eye strain during night-time testing sessions with our elegant dark mode interface.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>Stay current with the latest testing tools and techniques through our regular updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Bug Matrix?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Save Time</h3>
+                    <p>No more searching for testing tools across the web. Everything you need is just a click away.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Increase Productivity</h3>
+                    <p>Streamline your testing workflow with quick access to all your essential tools and resources.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Stay Organized</h3>
+                    <p>Keep all your testing tools, notes, and resources neatly organized in one central hub.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Learn & Grow</h3>
+                    <p>Access curated learning resources to expand your testing knowledge and skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download Bug Matrix Today</h2>
+            <p>Start testing smarter, not harder. Get Bug Matrix for your browser now!</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn chrome">
+                    <i class="fab fa-chrome"></i>
+                    <span>Chrome Web Store</span>
+                </a>
+                <a href="#" class="download-btn edge">
+                    <i class="fab fa-edge"></i>
+                    <span>Microsoft Edge Add-ons</span>
+                </a>
+                <a href="#" class="download-btn firefox">
+                    <i class="fab fa-firefox-browser"></i>
+                    <span>Firefox Add-ons</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="user-reviews" class="user-reviews">
+        <div class="container">
+            <h2 class="section-title">🌟 User Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>"Amazing Tool! Turning bugs into insights! A must-have SQA testing tool for Chrome that makes debugging smoother and smarter."</p>
+                    </div>
+                    <div class="review-author">
+                        <h4>Anonymous</h4>
+                        <p>5 August</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>"It's really useful tool for the software development industry."</p>
+                    </div>
+                    <div class="review-author">
+                        <h4>Rumel Mahmud</h4>
+                        <p>2 February</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>"A game-changer for our QA team. The comprehensive features have streamlined our entire testing process."</p>
+                    </div>
+                    <div class="review-author">
+                        <h4>Fahim Iqbal</h4>
+                        <p>05 March</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Testers Are Saying</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Bug Matrix has completely transformed my testing workflow. I have all my tools in one place, and the test data generation feature saves me hours every week."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-1.svg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Senior QA Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a security tester, the OSINT features and security payloads in Bug Matrix are invaluable. It's become an essential part of my penetration testing toolkit."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-2.svg" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Security Testing Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The templates and scripts in Bug Matrix have helped standardize our testing process across the team. It's improved our efficiency and consistency tremendously."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-3.svg" alt="Emily Rodriguez">
+                        <div>
+                            <h4>Emily Rodriguez</h4>
+                            <p>QA Team Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Bug Matrix free to use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Bug Matrix is completely free to use. We believe in making quality testing tools accessible to everyone.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does Bug Matrix work offline?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most features of Bug Matrix work offline, including test data generation, templates, and notes. However, some features like OSINT tools require an internet connection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often is Bug Matrix updated?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We regularly update Bug Matrix with new features, tools, and improvements. We aim to release updates every 4-6 weeks based on user feedback and industry trends.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I suggest new features or tools?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome suggestions from our users. You can submit feature requests through our website or contact us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Have questions or suggestions? We'd love to hear from you!</p>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/info@sqatesting.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                    <div id="index-success-message" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p>💻 𝐖𝐞𝐛𝐬𝐢𝐭𝐞</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <p><a href="https://sqatesting.com" target="_blank">🌐 https://sqatesting.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>📩 info@sqatesting.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p><a href="https://bugmatrix.sqatesting.com" target="_blank">💻 https://bugmatrix.sqatesting.com</a></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/sqatesting/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

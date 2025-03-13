@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Bug Matrix - SQA Testing Tools Hub</title>
+    <meta name="description" content="Bug Matrix's Terms of Service outline the rules, guidelines, and legal terms that govern your use of our services and website.">
+    <meta name="keywords" content="Bug Matrix, terms of service, legal terms, user agreement, conditions, SQA testing">
+    <meta name="author" content="Bug Matrix Team">
+    <meta property="og:title" content="Terms of Service | Bug Matrix - SQA Testing Tools Hub">
+    <meta property="og:description" content="Bug Matrix's Terms of Service outline the rules, guidelines, and legal terms that govern your use of our services and website.">
+    <meta property="og:image" content="images/bug-matrix-logo.png">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/terms-of-service.html">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .terms-hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234285f4" opacity="0.1"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .terms-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .terms-hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .terms-content {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .terms-container {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .terms-container h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .terms-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 3px;
+        }
+        
+        .terms-container h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .terms-container h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .terms-container p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        
+        .terms-container ul, 
+        .terms-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .terms-container li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+        
+        .terms-container a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .terms-container a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .terms-container .highlight-box {
+            background: rgba(66, 133, 244, 0.05);
+            border-left: 3px solid var(--primary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .terms-container .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .terms-container .last-updated {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .terms-toc {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+        
+        .terms-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .terms-toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .terms-toc li {
+            margin-bottom: 10px;
+        }
+        
+        .terms-toc a {
+            display: inline-block;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .terms-toc a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+        
+        .terms-toc a:hover::after {
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .terms-hero p {
+                font-size: 1rem;
+            }
+            
+            .terms-container {
+                padding: 30px;
+            }
+            
+            .terms-container h2 {
+                font-size: 1.6rem;
+            }
+            
+            .terms-container h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo" class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="terms-hero">
+        <div class="terms-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Terms of Service</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Please read these terms carefully before using our services. By accessing or using Bug Matrix, you agree to be bound by these terms and conditions.</p>
+        </div>
+    </section>
+
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-container">
+                <div class="terms-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#agreement">1. Agreement to Terms</a></li>
+                        <li><a href="#intellectual-property">2. Intellectual Property Rights</a></li>
+                        <li><a href="#user-accounts">3. User Accounts</a></li>
+                        <li><a href="#user-responsibilities">4. User Responsibilities</a></li>
+                        <li><a href="#payment-terms">5. Payment Terms</a></li>
+                        <li><a href="#service-limitations">6. Service Limitations and Modifications</a></li>
+                        <li><a href="#third-party-links">7. Third-Party Links</a></li>
+                        <li><a href="#disclaimer">8. Disclaimer of Warranties</a></li>
+                        <li><a href="#limitation-liability">9. Limitation of Liability</a></li>
+                        <li><a href="#indemnification">10. Indemnification</a></li>
+                        <li><a href="#termination">11. Termination</a></li>
+                        <li><a href="#governing-law">12. Governing Law</a></li>
+                        <li><a href="#changes-terms">13. Changes to Terms</a></li>
+                        <li><a href="#contact-us">14. Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="agreement">1. Agreement to Terms</h2>
+                <p>These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Bug Matrix ("we," "us" or "our"), concerning your access to and use of the <a href="https://bugmatrix.sqatesting.com">https://bugmatrix.sqatesting.com</a> website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").</p>
+                
+                <p>You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms. If you do not agree with all of these Terms, then you are expressly prohibited from using the Site and you must discontinue use immediately.</p>
+                
+                <div class="highlight-box">
+                    <p>Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms at any time and for any reason.</p>
+                </div>
+
+                <h2 id="intellectual-property">2. Intellectual Property Rights</h2>
+                <p>Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights and unfair competition laws of the United States, international copyright laws, and international conventions.</p>
+                
+                <p>The Content and the Marks are provided on the Site "AS IS" for your information and personal use only. Except as expressly provided in these Terms, no part of the Site and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
+                
+                <p>Provided that you are eligible to use the Site, you are granted a limited license to access and use the Site and to download or print a copy of any portion of the Content to which you have properly gained access solely for your personal, non-commercial use. We reserve all rights not expressly granted to you in and to the Site, the Content and the Marks.</p>
+
+                <h2 id="user-accounts">3. User Accounts</h2>
+                <p>If you create an account on the Site, you are responsible for maintaining the security of your account and you are fully responsible for all activities that occur under the account and any other actions taken in connection with the account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security.</p>
+                
+                <p>We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions. You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization.</p>
+
+                <h2 id="user-responsibilities">4. User Responsibilities</h2>
+                <p>By using the Site, you represent and warrant that:</p>
+                <ol>
+                    <li>All registration information you submit will be true, accurate, current, and complete;</li>
+                    <li>You will maintain the accuracy of such information and promptly update such registration information as necessary;</li>
+                    <li>You have the legal capacity and you agree to comply with these Terms;</li>
+                    <li>You are not a minor in the jurisdiction in which you reside;</li>
+                    <li>You will not access the Site through automated or non-human means, whether through a bot, script or otherwise;</li>
+                    <li>You will not use the Site for any illegal or unauthorized purpose;</li>
+                    <li>Your use of the Site will not violate any applicable law or regulation.</li>
+                </ol>
+                
+                <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site (or any portion thereof).</p>
+
+                <h2 id="payment-terms">5. Payment Terms</h2>
+                <p>We accept the following forms of payment:</p>
+                <ul>
+                    <li>Credit Card</li>
+                    <li>PayPal</li>
+                    <li>Bank Transfer</li>
+                </ul>
+                
+                <p>You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Site. You further agree to promptly update account and payment information, including email address, payment method, and payment card expiration date, so that we can complete your transactions and contact you as needed.</p>
+                
+                <p>Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in the currency specified during checkout.</p>
+                
+                <p>You agree to pay all charges at the prices then in effect for your purchases and any applicable shipping fees, and you authorize us to charge your chosen payment provider for any such amounts upon placing your order.</p>
+                
+                <p>We reserve the right to correct any errors or mistakes in pricing, even if we have already requested or received payment.</p>
+
+                <h2 id="service-limitations">6. Service Limitations and Modifications</h2>
+                <p>We reserve the right to change, modify, or remove the contents of the Site at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Site. We also reserve the right to modify or discontinue all or part of the Site without notice at any time.</p>
+                
+                <p>We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Site.</p>
+                
+                <p>We cannot guarantee the Site will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Site, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Site at any time or for any reason without notice to you.</p>
+                
+                <p>You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Site during any downtime or discontinuance of the Site. Nothing in these Terms will be construed to obligate us to maintain and support the Site or to supply any corrections, updates, or releases in connection therewith.</p>
+
+                <h2 id="third-party-links">7. Third-Party Links</h2>
+                <p>The Site may contain links to third-party websites and services that are not owned or controlled by Bug Matrix.</p>
+                
+                <p>Bug Matrix has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that Bug Matrix shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such websites or services.</p>
+                
+                <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.</p>
+
+                <h2 id="disclaimer">8. Disclaimer of Warranties</h2>
+                <p>THE SITE IS PROVIDED ON AN "AS-IS" AND "AS AVAILABLE" BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                
+                <p>WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SITE'S CONTENT OR THE CONTENT OF ANY WEBSITES LINKED TO THE SITE AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SITE, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SITE, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SITE BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE.</p>
+                
+                <p>WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SITE, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.</p>
+
+                <h2 id="limitation-liability">9. Limitation of Liability</h2>
+                <p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+                
+                <div class="highlight-box">
+                    <p>NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE SIX (6) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING.</p>
+                </div>
+
+                <h2 id="indemnification">10. Indemnification</h2>
+                <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of: (1) your use of the Site; (2) breach of these Terms; (3) any breach of your representations and warranties set forth in these Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Site with whom you connected via the Site.</p>
+                
+                <p>Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
+
+                <h2 id="termination">11. Termination</h2>
+                <p>These Terms shall remain in full force and effect while you use the Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SITE (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS OR OF ANY APPLICABLE LAW OR REGULATION.</p>
+                
+                <p>WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SITE OR DELETE YOUR ACCOUNT AND ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.</p>
+                
+                <p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</p>
+
+                <h2 id="governing-law">12. Governing Law</h2>
+                <p>These Terms shall be governed by and defined following the laws of the United States. Bug Matrix and yourself irrevocably consent that the courts of the United States shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
+
+                <h2 id="changes-terms">13. Changes to Terms</h2>
+                <p>We reserve the right to change, modify, or revise these Terms at any time. We will alert you about any changes by updating the "Last updated" date of these Terms, and you waive any right to receive specific notice of each such change.</p>
+                
+                <p>It is your responsibility to periodically review these Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms by your continued use of the Site after the date such revised Terms are posted.</p>
+
+                <h2 id="contact-us">14. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us at:</p>
+                <ul>
+                    <li>Email: <a href="mailto:info@sqatesting.com">info@sqatesting.com</a></li>
+                    <li>Website: <a href="https://bugmatrix.sqatesting.com/contact.html">Contact Form</a></li>
+                </ul>
+
+                <p class="last-updated">Last Updated: May 15, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                        <span>Bug Matrix</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="https://sqatesting.com" target="_blank">Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
