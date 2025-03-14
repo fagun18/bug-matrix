@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bugmatrix.sqatesting.com/</loc>
     <lastmod>2024-05-15</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bugmatrix.sqatesting.com/images/bug-matrix-logo.png</image:loc>
+      <image:title>Bug Matrix Logo</image:title>
+      <image:caption>Bug Matrix - SQA Testing Tools Hub</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/documentation.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/community.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bugmatrix.sqatesting.com/about.html</loc>
     <lastmod>2024-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bugmatrix.sqatesting.com/contact.html</loc>
     <lastmod>2024-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bugmatrix.sqatesting.com/careers.html</loc>
     <lastmod>2024-05-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/changelog.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/roadmap.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bugmatrix.sqatesting.com/privacy-policy.html</loc>
@@ -36,4 +67,8 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/404.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>yearly</changefreq>
 </urlset> 

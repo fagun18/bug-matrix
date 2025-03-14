@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Bug Matrix Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:title>Bug Matrix - SQA Testing Tools Hub</news:title>
+      <news:keywords>software testing, QA tools, test automation, API testing, performance testing, security testing</news:keywords>
+      <news:genres>Blog, Technology, Software Development</news:genres>
+      <news:publication_date>2024-05-15</news:publication_date>
+      <news:access>Subscription</news:access>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/documentation.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Bug Matrix Documentation</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:title>Bug Matrix Documentation - Complete Guide</news:title>
+      <news:keywords>documentation, user guide, testing tools, QA documentation</news:keywords>
+      <news:genres>Documentation, Technical Writing</news:genres>
+      <news:publication_date>2024-05-15</news:publication_date>
+      <news:access>Free</news:access>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://bugmatrix.sqatesting.com/community.html</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Bug Matrix Community</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:title>Bug Matrix Community - Connect with Testers</news:title>
+      <news:keywords>community, testing community, QA community, software testing community</news:keywords>
+      <news:genres>Community, Social Network</news:genres>
+      <news:publication_date>2024-05-15</news:publication_date>
+      <news:access>Free</news:access>
+    </news:news>
+  </url>
+</urlset> 

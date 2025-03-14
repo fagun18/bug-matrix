@@ -1,5 +1,26 @@
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /documentation/
+Allow: /community/
+Allow: /about/
+Allow: /contact/
+Allow: /careers/
+Allow: /changelog/
+Allow: /roadmap/
+Allow: /privacy-policy/
+Allow: /terms-of-service/
+
 Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /*?*
+Disallow: /*.php$
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+Crawl-delay: 10
 
 Sitemap: https://bugmatrix.sqatesting.com/sitemap.xml 
