@@ -1,0 +1,16 @@
+[33mcommit 1d344b8329a136b3df53a9b7fcf4d04ba4a3462d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: fagun18 <fagun115946@gmail.com>
+Date:   Fri Mar 14 14:38:56 2025 +0600
+
+    Enhanced SEO optimization: Added sitemap.xml, robots.txt, manifest.json, and robots-meta.xml. Improved meta tags and structured data in index.html
+
+ .vscode/launch.json  |   14 [32m+[m
+ community.html       |   80 [32m+[m[31m-[m
+ documentation.html   |  326 [32m++++[m[31m----[m
+ images/edge-logo.svg |   16 [31m-[m
+ index.html           | 2058 [32m++++++++++++++++++++++++++++++++++++++++[m[31m----------[m
+ manifest.json        |   60 [32m++[m
+ robots-meta.xml      |   57 [32m++[m
+ robots.txt           |   21 [32m+[m
+ sitemap.xml          |   45 [32m+[m[31m-[m
+ 9 files changed, 2017 insertions(+), 660 deletions(-)

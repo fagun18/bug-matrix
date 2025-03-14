@@ -1,0 +1,8 @@
+[33mcommit 2e95a58b940d7f5336e11cd5a958f01cb5bee23f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: fagun18 <fagun115946@gmail.com>
+Date:   Fri Mar 14 15:34:54 2025 +0600
+
+    Removed reCAPTCHA section from contact form for cleaner design
+
+ contact.html | 52 [32m++++++++[m[31m--------------------------------------------[m
+ 1 file changed, 8 insertions(+), 44 deletions(-)
