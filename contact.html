@@ -405,7 +405,7 @@
                     </div>
                     
                     <h2>Send Us a Message</h2>
-                    <form id="contact-form" action="https://formspree.io/f/info@sqatesting.com" method="POST">
+                    <form action="https://formspree.io/f/mqkvejqb" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required>
@@ -518,53 +518,17 @@
         </div>
     </footer>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
     <script>
-        // Contact form submission
+        // Simple success message handling
         document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contact-form');
             const successMessage = document.getElementById('success-message');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(contactForm);
-                    const data = Object.fromEntries(formData);
-                    
-                    // Send email using Formspree
-                    fetch('https://formspree.io/f/info@sqatesting.com', {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            // Show success message
-                            contactForm.style.display = 'none';
-                            successMessage.style.display = 'block';
-                            
-                            // Reset form
-                            contactForm.reset();
-                            
-                            // Hide success message after 5 seconds and show form again
-                            setTimeout(() => {
-                                successMessage.style.display = 'none';
-                                contactForm.style.display = 'block';
-                            }, 5000);
-                        } else {
-                            throw new Error('Form submission failed');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error sending your message. Please try again later.');
-                    });
-                });
+            if (successMessage) {
+                // Check if form was submitted successfully
+                if (window.location.search.includes('success=true')) {
+                    window.location.href = 'thanks.html';
+                }
             }
         });
     </script>
