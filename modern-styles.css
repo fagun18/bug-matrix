@@ -1,0 +1,1796 @@
+:root {
+    /* === Core Theme Colors === */
+    --theme-primary: #4361ee;         /* Vibrant Blue (from --gradient-1 start) - Good for main actions */
+    --theme-secondary: #7209b7;       /* Deep Purple (from --accent-color-2) - Good for secondary actions or highlights */
+    --theme-primary-rgb: 67,97,238;
+
+    /* === Accent Colors === */
+    --theme-accent-pink: #f72585;     /* Bright Pink (from --gradient-2 start) */
+    --theme-accent-pink-rgb: 247,37,133;
+    --theme-accent-cyan: #4cc9f0;     /* Bright Blue/Cyan (from --accent-color-3) */
+    --theme-accent-magenta: #b5179e;  /* Magenta (from --accent-color-4) */
+    --theme-accent-orange: #ff6b00;   /* Orange (used for some headings, let's make it official) */
+
+    /* === Backgrounds === */
+    --bg-primary: #ffffff;            /* Main light background (clean white) */
+    --bg-secondary: #f8fafc;        /* Slightly off-white (current --light-bg from modern) - for sections */
+    --bg-dark: #0f172a;             /* Very Dark Blue (current --dark-bg from modern) - for dark sections/footer */
+    --bg-glass: rgba(255, 255, 255, 0.1); /* For glassmorphism */
+
+    /* === Text Colors === */
+    --text-primary-lightbg: #0f172a;  /* Dark text for light backgrounds (matches --bg-dark for contrast) */
+    --text-secondary-lightbg: #64748b;/* Muted text for light backgrounds (current --text-muted) */
+    --text-primary-darkbg: #f8fafc;   /* Light text for dark backgrounds (current --text-light) */
+    --text-secondary-darkbg: #cbd5e1; /* Lighter muted text for dark backgrounds (e.g., Slate 300) */
+    --text-link: var(--theme-primary);
+    --text-link-hover: var(--theme-secondary);
+    --text-color: #333; /* Retaining a generic text color from original for now, can be phased out */
+    --text-light: #f8fafc; /* Alias for --text-primary-darkbg */
+    --text-muted: #64748b; /* Alias for --text-secondary-lightbg */
+
+
+    /* === Borders === */
+    --border-primary: #e2e8f0;       /* Light Gray (current --border-color) */
+    --border-glass: rgba(255, 255, 255, 0.2);
+
+    /* === UI Elements === */
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 12px;
+    --border-radius: var(--border-radius-large); /* Default to large */
+
+    --shadow-card: 0 10px 20px rgba(0, 0, 0, 0.07);
+    --shadow-card-hover: 0 15px 30px rgba(0, 0, 0, 0.1);
+    --box-shadow: var(--shadow-card); /* Alias for compatibility */
+    --box-shadow-hover: var(--shadow-card-hover); /* Alias for compatibility */
+    --shadow-interactive: 0 5px 15px rgba(var(--theme-primary-rgb), 0.2);
+
+    /* === Transitions === */
+    --transition-fast: all 0.2s ease-out;
+    --transition-medium: all 0.3s ease-out;
+    --transition-slow: all 0.5s ease-out;
+    --transition: var(--transition-medium); /* Default transition */
+
+    /* === Gradients (can be rebuilt using the new theme colors) === */
+    --gradient-hero: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 70%, var(--theme-accent-magenta) 100%);
+    --gradient-button: linear-gradient(135deg, var(--theme-accent-pink) 0%, var(--theme-secondary) 100%);
+    --gradient-button-hover: linear-gradient(135deg, var(--theme-accent-cyan) 0%, var(--theme-primary) 100%);
+    --gradient-card-1: linear-gradient(135deg, var(--theme-primary), var(--theme-accent-cyan));
+    --gradient-card-2: linear-gradient(135deg, var(--theme-accent-pink), var(--theme-accent-magenta));
+    --gradient-card-3: linear-gradient(135deg, var(--theme-secondary), #3a0ca3); /* Kept #3a0ca3 as it's a distinct dark purple used */
+    --gradient-card-4: linear-gradient(135deg, var(--theme-accent-cyan), var(--theme-primary));
+
+    /* Neon Shadows (aligning with new theme colors where possible) */
+    --shadow-neon-primary: 0 0 15px rgba(var(--theme-primary-rgb), 0.4), 0 0 25px rgba(var(--theme-primary-rgb), 0.2);
+    --shadow-neon-pink: 0 0 15px rgba(var(--theme-accent-pink-rgb), 0.5), 0 0 25px rgba(var(--theme-accent-pink-rgb), 0.3);
+    --shadow-neon-purple: 0 0 15px rgba(114, 9, 183, 0.5), 0 0 30px rgba(114, 9, 183, 0.3), 0 0 45px rgba(114, 9, 183, 0.1); /* Kept original if specific shade needed */
+    --shadow-neon-blue: 0 0 15px rgba(76, 201, 240, 0.5), 0 0 30px rgba(76, 201, 240, 0.3), 0 0 45px rgba(76, 201, 240, 0.1); /* Corresponds to --theme-accent-cyan */
+
+    /* Glass morphism - already defined with specific values, looks fine */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-blur: blur(8px);
+
+    /* Keep original specific gradients if they are distinct and used */
+    --gradient-primary: linear-gradient(135deg, #6c63ff 0%, #4d44d9 100%); /* Original primary gradient */
+    --gradient-accent: linear-gradient(135deg, #ff6584 0%, #ff8c66 100%); /* Original accent gradient */
+    --gradient-cool: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    --gradient-warm: linear-gradient(135deg, #f857a6 0%, #ff5858 100%);
+    --gradient-green: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+
+    /* === Spacing === */
+    --spacing-section-padding-y: 120px;
+    --spacing-gutter-small: 15px;
+    --spacing-gutter-medium: 30px;
+    --spacing-gutter-large: 50px;
+}
+
+html {
+    font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-size: 1rem; /* Equivalent to 16px by default */
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: var(--bg-primary); /* Use primary bg for main body */
+    color: var(--text-primary-lightbg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-primary-lightbg); /* Ensure headings use appropriate color on light bg */
+    margin-top: 0; /* Reset default margins */
+}
+
+h1 {
+    font-size: 3rem; /* Example size, hero h1 is larger */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+h2 { /* For general section titles, .section-title class will be more specific */
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+}
+
+h3 { /* For card titles etc. */
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Enhanced Hero Section */
+.hero {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+    padding: 180px 0 var(--spacing-section-padding-y); /* Updated bottom padding */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="45" y="45" width="10" height="10" fill="white" opacity="0.05"/></svg>');
+    animation: backgroundMove 20s linear infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(76, 201, 240, 0.3) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.3) 0%, transparent 25%);
+    animation: pulse-bg 8s infinite alternate;
+}
+
+@keyframes pulse-bg {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-primary-darkbg); /* Updated from white */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(135deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    animation: text-shimmer 3s infinite alternate;
+}
+
+@keyframes text-shimmer {
+    0% {
+        background-position: -100px;
+    }
+    100% {
+        background-position: 100px;
+    }
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2), var(--accent-color-3));
+    border-radius: 4px;
+    box-shadow: var(--shadow-neon-pink);
+    animation: width-pulse 3s infinite alternate;
+}
+
+@keyframes width-pulse {
+    0% { width: 100px; opacity: 0.7; }
+    100% { width: 200px; opacity: 1; }
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.primary-btn { /* This selector is also in styles.css */
+    background: var(--bg-primary); /* Updated from white */
+    color: var(--theme-accent-pink); /* Updated from --accent-color */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-medium); /* Updated from all 0.3s ease */
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-button); /* Updated from --gradient-btn */
+    z-index: -1;
+    transition: all 0.5s ease; /* Consider var(--transition-slow) */
+    opacity: 0;
+}
+
+.primary-btn:hover {
+    color: var(--theme-accent-cyan) !important; /* Updated from #43e97b */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.primary-btn:hover::before {
+    opacity: 1;
+}
+
+.secondary-btn { /* This selector is also in styles.css */
+    background: transparent;
+    color: var(--text-primary-darkbg); /* Updated from white */
+    border: 2px solid var(--text-primary-darkbg); /* Updated from white */
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-medium); /* Updated from all 0.3s ease */
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.secondary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--text-primary-darkbg); /* Updated from white */
+    z-index: -1;
+    transition: all 0.5s ease; /* Consider var(--transition-slow) */
+    opacity: 0;
+}
+
+.secondary-btn:hover {
+    color: var(--theme-accent-orange) !important; /* Updated from #ffcc00 */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-btn:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Browser Logos Section */
+/* The HTML uses class .browsers-section, styles.css uses .browsers */
+/* This CSS uses .browsers, which might be intentional to override styles.css or an error */
+.browsers {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: var(--spacing-section-padding-y) 0; /* Updated */
+    position: relative;
+    overflow: hidden;
+}
+
+.browsers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="2" fill="%234361ee" opacity="0.1"/></svg>');
+    opacity: 0.5;
+}
+
+.browser-logos { /* Also in styles.css */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* This is the first definition block for .browser-logo in this file */
+.browser-logo { /* Also in styles.css */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-medium);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: white;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.browser-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-card-1);
+    z-index: 1;
+}
+
+.browser-logo:nth-child(2)::before {
+    background: var(--gradient-card-2);
+}
+
+.browser-logo:nth-child(3)::before {
+    background: var(--gradient-card-3);
+}
+
+.browser-logo:nth-child(4)::before {
+    background: var(--gradient-card-4);
+}
+
+.browser-logo:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.browser-logo img { /* Also in styles.css */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: var(--transition-medium);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.browser-logo:hover img {
+    transform: scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
+.browser-logo span { /* Also in styles.css */
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.browser-logo span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-btn);
+    transition: var(--transition-medium);
+}
+
+.browser-logo:hover span::after {
+    width: 80%;
+}
+
+/* Enhanced Features Section */
+.features { /* Also in styles.css */
+    padding: var(--spacing-section-padding-y) 0; /* Updated */
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before { /* Also in styles.css */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="13" y="13" width="4" height="4" fill="%234361ee" opacity="0.05"/></svg>');
+}
+
+.section-title { /* New, h2 in styles.css has base styles */
+    position: relative;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-title::after { /* h2 in styles.css has simpler ::after */
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-btn);
+    border-radius: 2px;
+    box-shadow: var(--shadow-neon-pink);
+}
+
+.features-grid { /* Also in styles.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* This is the first definition block for .feature-card in this file */
+.feature-card { /* Also in styles.css */
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card::before { /* Also in styles.css */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-card-1);
+    z-index: 1;
+    transition: var(--transition-medium);
+}
+
+.feature-card:nth-child(2n)::before {
+    background: var(--gradient-card-2);
+}
+
+.feature-card:nth-child(3n)::before {
+    background: var(--gradient-card-3);
+}
+
+.feature-card:nth-child(4n)::before {
+    background: var(--gradient-card-4);
+}
+
+.feature-card:hover { /* Also in styles.css */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.feature-card:hover::before { /* Also in styles.css */
+    height: 10px;
+}
+
+.feature-icon { /* Also in styles.css */
+    font-size: 3rem;
+    margin-bottom: 25px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: var(--transition-medium);
+}
+
+.feature-card:nth-child(2n) .feature-icon {
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:nth-child(3n) .feature-icon {
+    background: var(--gradient-3);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:nth-child(4n) .feature-icon {
+    background: var(--gradient-4);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
+.feature-card h3 { /* Also in styles.css */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+    transition: var(--transition-medium);
+    font-weight: 600;
+}
+
+.feature-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-btn);
+    border-radius: 2px;
+    transition: var(--transition-medium);
+}
+
+.feature-card:hover h3::after {
+    width: 80px;
+}
+
+.feature-card p { /* Also in styles.css */
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: var(--transition-medium);
+    line-height: 1.7;
+}
+
+.feature-card:hover p {
+    color: var(--text-color);
+}
+
+/* Floating animation for various elements */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Pulse animation for icons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glowing effect for buttons and important elements */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(76, 201, 240, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(76, 201, 240, 0.8), 0 0 30px rgba(76, 201, 240, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(76, 201, 240, 0.5);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .browser-logo { /* Also in styles.css @media */
+        padding: 20px;
+    }
+
+    .feature-card { /* Also in styles.css @media */
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-color), var(--accent-color-2));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--accent-color), var(--accent-color-3));
+}
+
+/* Glass Morphism Card Styles */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--border-radius);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 3D Card Effect */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: var(--transition-slow); /* Updated from all 0.6s cubic-bezier(...) */
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+}
+
+.card-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.2) 38%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0) 48%);
+    background-size: 200% 200%;
+    animation: shine 3s infinite;
+    z-index: 2;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Enhanced Feature Cards - This is the second definition block for .feature-card */
+.feature-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-slow); /* Updated */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d; /* Added */
+    perspective: 1000px; /* Added */
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-card-1);
+    z-index: 1;
+    transition: var(--transition-slow); /* Updated */
+}
+
+.feature-card:nth-child(2n)::before {
+    background: var(--gradient-card-2);
+}
+
+.feature-card:nth-child(3n)::before {
+    background: var(--gradient-card-3);
+}
+
+.feature-card:nth-child(4n)::before {
+    background: var(--gradient-card-4);
+}
+
+.feature-card:hover {
+    transform: translateY(-15px) rotateY(5deg) rotateX(5deg) scale(1.05); /* Differs */
+    box-shadow: var(--shadow-card-hover),
+                0 5px 15px rgba(67, 97, 238, 0.1),
+                0 15px 35px rgba(67, 97, 238, 0.1); /* Differs */
+}
+
+.feature-card:hover::before {
+    height: 10px;
+}
+
+.feature-card-content { /* New class associated with the second .feature-card block */
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px);
+    transition: var(--transition-slow); /* Updated */
+}
+
+.feature-card:hover .feature-card-content {
+    transform: translateZ(40px);
+}
+
+.feature-icon { /* Second definition for .feature-icon */
+    font-size: 3.2rem; /* Differs */
+    margin-bottom: 25px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: var(--transition-slow); /* Updated */
+    transform: translateZ(30px); /* Added */
+}
+
+.feature-card:nth-child(2n) .feature-icon {
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:nth-child(3n) .feature-icon {
+    background: var(--gradient-3);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:nth-child(4n) .feature-icon {
+    background: var(--gradient-4);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.feature-card:hover .feature-icon {
+    transform: translateZ(60px) scale(1.1); /* Differs */
+    animation: pulse 1.5s infinite;
+}
+
+.feature-card h3 { /* Second definition for .feature-card h3 */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+    transition: var(--transition-slow); /* Updated */
+    font-weight: 600;
+    transform: translateZ(25px); /* Added */
+}
+
+.feature-card:hover h3 {
+    transform: translateZ(50px); /* Added */
+}
+
+.feature-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-btn);
+    border-radius: 2px;
+    transition: var(--transition-slow); /* Updated */
+}
+
+.feature-card:hover h3::after {
+    width: 80px;
+    box-shadow: var(--shadow-neon-pink); /* Added */
+}
+
+.feature-card p { /* Second definition for .feature-card p */
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: var(--transition-slow); /* Updated */
+    line-height: 1.7;
+    transform: translateZ(20px); /* Added */
+}
+
+.feature-card:hover p {
+    color: var(--text-color);
+    transform: translateZ(40px); /* Added */
+}
+
+/* Enhanced Browser Logo Cards - Second definition block for .browser-logo */
+.browser-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-slow); /* Updated */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: white;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform-style: preserve-3d; /* Added */
+    perspective: 1000px; /* Added */
+}
+
+.browser-link { /* New class associated with this .browser-logo block */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.browser-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-card-1);
+    z-index: 1;
+    transition: var(--transition-slow); /* Updated */
+}
+
+.browser-logo:nth-child(2)::before {
+    background: var(--gradient-card-2);
+}
+
+.browser-logo:nth-child(3)::before {
+    background: var(--gradient-card-3);
+}
+
+.browser-logo:nth-child(4)::before {
+    background: var(--gradient-card-4);
+}
+
+.browser-logo:hover {
+    transform: translateY(-15px) rotateY(5deg) rotateX(5deg) scale(1.05); /* Differs */
+    box-shadow: var(--shadow-card-hover);
+}
+
+.browser-logo:hover::before {
+    height: 10px; /* Added */
+}
+
+.browser-logo-content { /* New class */
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px);
+    transition: var(--transition-slow); /* Updated */
+}
+
+.browser-logo:hover .browser-logo-content {
+    transform: translateZ(40px);
+}
+
+.browser-logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: var(--transition-slow); /* Updated */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    transform: translateZ(30px); /* Added */
+}
+
+.browser-logo:hover img {
+    transform: translateZ(60px) scale(1.1); /* Differs */
+    animation: pulse 1.5s infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2)); /* Added */
+}
+
+.browser-logo span {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 10px;
+    transition: var(--transition-slow); /* Updated */
+    transform: translateZ(25px); /* Added */
+}
+
+.browser-logo:hover span {
+    transform: translateZ(50px); /* Added */
+}
+
+.browser-logo span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-btn);
+    transition: var(--transition-slow); /* Updated */
+}
+
+.browser-logo:hover span::after {
+    width: 80%;
+    box-shadow: var(--shadow-neon-pink); /* Added */
+}
+
+/* Tilt Effect for Cards */
+.js-tilt {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.js-tilt-glare {
+    border-radius: var(--border-radius);
+}
+
+/* Animated Gradient Border */
+.gradient-border {
+    position: relative;
+    border-radius: var(--border-radius);
+    padding: 5px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--border-radius);
+    padding: 4px;
+    background: linear-gradient(
+        45deg,
+        var(--accent-color),
+        var(--accent-color-2),
+        var(--accent-color-3),
+        var(--accent-color-4),
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-rotate 4s linear infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes border-rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Elements */
+.float-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-element-slow {
+    animation: float 8s ease-in-out infinite;
+}
+
+.float-element-fast {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Testimonials Section Styles */
+.testimonials { /* Also in styles.css */
+    padding: var(--spacing-section-padding-y) 0; /* Updated */
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-slider { /* Also in styles.css */
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    overflow: hidden;
+}
+
+.testimonial-track { /* New */
+    display: flex;
+    transition: transform var(--transition-slow);
+}
+
+.testimonial { /* Also in styles.css */
+    flex: 0 0 100%;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin: 0 15px;
+    transition: var(--transition-slow);
+}
+
+.testimonial-content { /* Also in styles.css */
+    position: relative;
+}
+
+.quote-icon { /* New */
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.testimonial-content p { /* Also in styles.css */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author { /* Also in styles.css */
+    display: flex;
+    align-items: center;
+}
+
+.author-image { /* New */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+.author-image img { /* styles.css has testimonial-author img */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 { /* styles.css has testimonial-author h4 */
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.author-info p { /* styles.css has testimonial-author p */
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.testimonial-controls { /* New */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.testimonial-prev,
+.testimonial-next { /* New */
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+/* This seems to be an incomplete or misplaced style rule */
+/*
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+*/
+/* Assuming the above was for .back-to-top, let's keep it commented or associate it correctly later */
+
+.back-to-top.active { /* .back-to-top is not defined yet in this file */
+    opacity: 1;
+    visibility: visible;
+    animation: pulse 2s infinite;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Animated Background Shapes */
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Should be low if it's a background */
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float-shape 15s linear infinite;
+}
+
+.shape:nth-child(1) {
+    width: 80px; height: 80px; top: 10%; left: 10%; animation-duration: 25s;
+}
+.shape:nth-child(2) {
+    width: 120px; height: 120px; top: 60%; left: 70%; animation-duration: 30s;
+}
+.shape:nth-child(3) {
+    width: 40px; height: 40px; top: 30%; left: 80%; animation-duration: 20s;
+}
+.shape:nth-child(4) {
+    width: 100px; height: 100px; top: 70%; left: 20%; animation-duration: 22s;
+}
+.shape:nth-child(5) {
+    width: 60px; height: 60px; top: 40%; left: 40%; animation-duration: 18s;
+}
+
+@keyframes float-shape {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-100px) rotate(180deg); opacity: 0.5; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.8; }
+}
+
+/* Text Reveal Animation */
+.reveal-text {
+    position: relative;
+    display: inline-block;
+    color: transparent; /* The actual text will be hidden */
+}
+
+.reveal-text::before {
+    content: attr(data-text); /* Takes text from data-text attribute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0; /* Starts with no width */
+    height: 100%;
+    color: var(--text-light); /* Revealed text color */
+    overflow: hidden;
+    white-space: nowrap;
+    animation: reveal 2s ease forwards;
+    animation-delay: var(--delay, 0s); /* Customizable delay */
+}
+
+@keyframes reveal {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* Card Hover Effects */
+.hover-card {
+    position: relative;
+    overflow: hidden; /* Important for pseudo-elements */
+    border-radius: var(--border-radius); /* Assumes --border-radius is defined */
+    transition: var(--transition-medium);
+}
+
+.hover-card::before {
+    content: '';
+    position: absolute;
+    top: -100%; left: -100%; /* Start off-screen */
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    transition: var(--transition-slow); /* Updated */
+    z-index: -1; /* Behind content, if card has other content */
+}
+
+.hover-card:hover::before {
+    top: 0; left: 0; /* Animate into view */
+}
+
+.hover-card::after { /* Similar effect from another corner */
+    content: '';
+    position: absolute;
+    bottom: -100%; right: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    transition: var(--transition-slow); /* Updated */
+    z-index: -1;
+}
+
+.hover-card:hover::after {
+    bottom: 0; right: 0;
+}
+
+/* Enhanced Browser Logo Styles - Third definition block for .browser-logos and .browser-logo */
+.browser-logos { /* This is the second definition in this file for .browser-logos */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Differs from 50px in the first .browser-logos block */
+    margin-top: 50px; /* Differs from 40px */
+}
+
+.browser-logo { /* This is the third definition in this file for .browser-logo */
+    width: 180px; /* New dimension */
+    height: 180px; /* New dimension */
+    border-radius: 20px; /* New border-radius */
+    background: rgba(255, 255, 255, 0.1); /* New background (glassmorphism) */
+    backdrop-filter: blur(10px); /* New */
+    display: flex;
+    justify-content: center; /* Added from previous simple flex-direction column */
+    align-items: center;
+    transition: var(--transition-medium); /* Updated */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Added */
+    /* padding from previous .browser-logo definition is missing */
+    /* text-align from previous .browser-logo definition is missing */
+    /* box-shadow from previous .browser-logo definition is missing */
+    /* z-index from previous .browser-logo definition is missing */
+}
+
+.browser-logo::before { /* Third definition */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0; /* Covers whole area */
+    border-radius: 20px; /* Matches new border-radius */
+    padding: 3px; /* This is the border thickness */
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color), var(--accent-color-3)); /* New gradient */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 1; /* Same as before */
+    /* height: 5px from previous definition is overridden by top/left/right/bottom and padding */
+}
+
+.browser-logo-content { /* Second definition of this new class */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher than ::before */
+    padding: 20px;
+}
+
+.browser-logo-content img,
+.browser-logo-content svg { /* Targets img and svg now */
+    width: 80px; height: 80px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); /* Stronger shadow */
+    transition: var(--transition-medium); /* Updated */
+}
+
+.browser-logo-content span {
+    font-size: 1.2rem; /* Differs */
+    font-weight: 600; /* Differs */
+    color: var(--white); /* Differs, original was --text-color */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Added */
+    transition: var(--transition-medium); /* Updated */
+}
+
+.browser-logo:hover { /* Third definition */
+    transform: translateY(-10px); /* Simpler than previous hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* New shadow */
+}
+
+.browser-logo:hover .browser-logo-content img,
+.browser-logo:hover .browser-logo-content svg {
+    transform: scale(1.1) translateY(-5px); /* New hover transform for image */
+}
+
+.browser-logo:hover .browser-logo-content span {
+    transform: translateY(5px); /* New hover transform for span */
+    font-weight: 700;
+    color: var(--black); /* Change color on hover */
+    text-shadow: none;
+}
+
+/* Feature Card Hover Text Fix */
+/* These rules are very generic and might override intended text colors on hover */
+.feature-card:hover h3, /* Targets h3 inside any .feature-card on hover */
+.benefit-card:hover h3 { /* Targets h3 inside any .benefit-card on hover */
+    color: var(--white); /* Overrides specific orange color if not more specific */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.feature-card-content h3, /* Targets h3 inside .feature-card-content */
+.benefit-card-content h3 { /* Targets h3 inside .benefit-card-content */
+    transition: color var(--transition-medium), text-shadow var(--transition-medium); /* Updated */
+}
+
+/* This redefines .feature-card-content and its h3, p which were defined earlier */
+.feature-card-content {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.feature-card:hover .feature-card-content {
+    transform: translateZ(40px);
+}
+.feature-card-content h3 { /* Third definition of .feature-card h3 effectively */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color); /* Default color */
+    position: relative;
+    padding-bottom: 15px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    font-weight: 600;
+    transform: translateZ(25px);
+}
+
+/* Orange text color for specific feature headings */
+/* These are more specific, so they should override the .feature-card-content h3 color */
+.feature-card:nth-child(1) .feature-card-content h3,
+.feature-card:nth-child(2) .feature-card-content h3,
+.feature-card:nth-child(3) .feature-card-content h3,
+.feature-card:nth-child(4) .feature-card-content h3,
+.feature-card:nth-child(5) .feature-card-content h3,
+.feature-card:nth-child(6) .feature-card-content h3,
+.benefit-card:nth-child(1) .benefit-card-content h3, /* Also targets benefit cards */
+.benefit-card:nth-child(2) .benefit-card-content h3,
+.benefit-card:nth-child(3) .benefit-card-content h3,
+.benefit-card:nth-child(4) .benefit-card-content h3 {
+    color: #ff6b00; /* Orange color */
+}
+
+/* Hover state for these specific orange headings */
+.feature-card:hover .feature-card-content h3,
+.benefit-card:hover .benefit-card-content h3 {
+    transform: translateZ(50px);
+    color: #ff6b00; /* Keep orange on hover */
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.3); /* Orange glow */
+    /* This will conflict with the generic .feature-card:hover h3 if that one has higher specificity or is parsed later without care */
+}
+
+
+.feature-card-content p { /* Third definition of .feature-card p effectively */
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    line-height: 1.7;
+    transform: translateZ(20px);
+}
+.feature-card:hover .feature-card-content p {
+    color: var(--text-color);
+    transform: translateZ(40px);
+}
+
+
+.testimonial-prev:hover, /* From .testimonial-controls */
+.testimonial-next:hover {
+    transform: scale(1.1);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.testimonial-dots { /* For slider */
+    display: flex;
+    margin: 0 20px;
+}
+
+.dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #e2e8f0; /* Light gray */
+    margin: 0 5px;
+    cursor: pointer;
+    transition: var(--transition-medium);
+}
+
+.dot.active {
+    background: var(--accent-color); /* Original accent */
+    transform: scale(1.2);
+}
+
+/* Call to Action Section Styles */
+.cta { /* Not in styles.css */
+    padding: var(--spacing-section-padding-y) 0; /* Updated */
+    position: relative;
+    overflow: hidden;
+    color: white; /* Original --white */
+}
+
+.cta-bg-wrapper {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    overflow: hidden; /* For skewed bg */
+}
+
+.cta-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--gradient-hero); /* Uses hero gradient */
+    transform: skewY(-6deg);
+    transform-origin: top left;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title { /* h2 in styles.css has base styles */
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white; /* Original --white */
+}
+
+.cta-text {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.cta-btn { /* Generic button style for CTA */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-medium);
+}
+/* .cta-btn.primary-btn and .cta-btn.secondary-btn would inherit from global .primary-btn/.secondary-btn and then this */
+/* The HTML uses .primary-btn and .secondary-btn directly so this .cta-btn might not be fully applied if not specific enough */
+
+
+.cta-btn i {
+    transition: transform var(--transition-medium);
+}
+.cta-btn:hover i {
+    transform: translateX(5px);
+}
+
+.cta-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Light gradient for text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Benefit Card Styles */
+.benefit-card { /* Also in styles.css, many differences */
+    background: white; /* Original --white. styles.css has gradient */
+    border-radius: var(--border-radius); /* New (12px) */
+    padding: 40px 30px; /* styles.css has 30px */
+    box-shadow: var(--shadow-card); /* New. styles.css has --box-shadow */
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* styles.css has --transition */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform-style: preserve-3d; /* Added */
+    perspective: 1000px; /* Added */
+    /* text-align from styles.css missing */
+}
+
+.benefit-card-content { /* New */
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.benefit-card:hover .benefit-card-content {
+    transform: translateZ(40px);
+}
+
+.benefit-icon { /* New */
+    font-size: 3rem;
+    margin-bottom: 25px;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateZ(30px);
+}
+.benefit-card:nth-child(2) .benefit-icon { background: var(--gradient-2); -webkit-background-clip: text; background-clip: text; }
+.benefit-card:nth-child(3) .benefit-icon { background: var(--gradient-3); -webkit-background-clip: text; background-clip: text; }
+.benefit-card:nth-child(4) .benefit-icon { background: var(--gradient-4); -webkit-background-clip: text; background-clip: text; }
+
+.benefit-card:hover .benefit-icon {
+    transform: translateZ(60px) scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
+.benefit-card h3 { /* styles.css has .benefit-card h3 with different props */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color); /* Original. styles.css has --primary-color */
+    position: relative;
+    padding-bottom: 15px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    font-weight: 600;
+    transform: translateZ(25px);
+}
+.benefit-card:hover h3 {
+    transform: translateZ(50px);
+    /* color: #ff6b00; -- this is applied by a later specific rule */
+}
+
+.benefit-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 50px; height: 3px;
+    background: var(--gradient-btn);
+    border-radius: 2px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.benefit-card:hover h3::after {
+    width: 80px;
+    box-shadow: var(--shadow-neon-pink);
+}
+
+.benefit-card p { /* No direct equivalent in styles.css for .benefit-card p */
+    color: var(--text-muted); /* New */
+    margin-bottom: 20px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    line-height: 1.7;
+    transform: translateZ(20px);
+}
+.benefit-card:hover p {
+    color: var(--text-color); /* Original */
+    transform: translateZ(40px);
+}
+
+.benefits-grid { /* Also in styles.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* styles.css has 250px */
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px; /* styles.css has 50px */
+}
+
+.benefits { /* Also in styles.css */
+    padding: var(--spacing-section-padding-y) 0; /* Updated */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(248,250,252,0.8) 0%, rgba(226,232,240,0.8) 100%); /* styles.css has solid white */
+    backdrop-filter: blur(10px); /* Added */
+    -webkit-backdrop-filter: blur(10px); /* Added */
+}
+
+
+@media (max-width: 768px) { /* Second @media 768px block */
+    .testimonial { padding: 30px; }
+    .testimonial-content p { font-size: 1rem; }
+    .cta-title { font-size: 2.2rem; }
+    .cta-text { font-size: 1.1rem; }
+    .cta-buttons { flex-direction: column; gap: 15px; }
+    .cta-stats { flex-direction: column; gap: 30px; }
+    .benefits-grid { grid-template-columns: 1fr; } /* styles.css also has this */
+}
+
+/* Enhanced hover text visibility - these are very generic and might have unintended consequences */
+.feature-card:hover h3,
+.browser-logo:hover span, /* This was defined more specifically earlier */
+.testimonial-card:hover h4, /* .testimonial-card not fully defined yet */
+.nav-link:hover { /* .nav-link is in styles.css */
+    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+    transform: translateY(-2px); /* Might conflict with other transforms */
+    transition: var(--transition); /* Original transition */
+}
+
+
+/* Enhanced Testimonial Styles - .testimonial-card is different from .testimonial */
+.testimonial-card {
+    background: rgba(255,255,255,0.1); /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius); /* New (12px) */
+    padding: 30px;
+    margin: 15px; /* For spacing in a slider */
+    min-width: 300px; max-width: 350px; /* Fixed width for slider items */
+    transition: var(--transition); /* Original */
+}
+.testimonial-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px; /* Centered */
+    border: 3px solid var(--primary-color); /* Original */
+    box-shadow: 0 5px 15px rgba(108,99,255,0.3); /* Primary color shadow */
+}
+.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.testimonial-position { /* Inside testimonial-card */
+    color: var(--light-text); /* Original */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.rating { /* Inside testimonial-card */
+    color: #ffcc00; /* Yellow for stars */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.slider-controls { /* For .testimonial-card slider */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.prev-btn, .next-btn { /* For .testimonial-card slider, similar to .testimonial-prev/next */
+    background: var(--gradient-primary); /* Original */
+    color: white; /* Original */
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: var(--transition); /* Original */
+    box-shadow: var(--box-shadow); /* Original */
+}
+
+/* Orange text color for specific feature and benefit headings - REPEATED BLOCK */
+/* This block is identical to a previous one and can be removed if the first one is kept */
+.feature-card:nth-child(1) .feature-card-content h3,
+/* ... same selectors ... */
+.benefit-card:nth-child(4) .benefit-card-content h3 {
+    color: #ff6b00;
+}
+
+.feature-card:hover .feature-card-content h3,
+.benefit-card:hover .benefit-card-content h3 {
+    transform: translateZ(50px);
+    color: #ff6b00;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}

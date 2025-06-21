@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Matrix 🐞 – SQA Testing Tools Hub | Free Software Testing Extensio
+n</title>
+    <meta name="description" content="Bug Matrix is your all-in-one browser exte
+nsion for software testing, QA, security testing, and more. Access 100+ testing
+tools, resources, and templates in one place. Free for Chrome and Firefox.">
+    <meta name="keywords" content="Bug Matrix, SQA tools, software testing tools
+, free testing tools, QA tools, test automation, API testing, performance testin
+g, security testing, browser extension, test data generation, OSINT tools, Selen
+ium, Playwright, Cypress, Postman, JMeter, Burp Suite, OWASP ZAP">
+    <meta name="author" content="Bug Matrix Team">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#6c63ff">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bugmatrix.sqatesting.com/">
+    <meta property="og:title" content="Bug Matrix 🐞 – SQA Testing Tools Hub | Fr
+ee Software Testing Extension">
+    <meta property="og:description" content="Bug Matrix is your all-in-one brows
+er extension for software testing, QA, security testing, and more. Access 100+ t
+esting tools, resources, and templates in one place. Free for Chrome and Firefox
+.">
+    <meta property="og:image" content="https://bugmatrix.sqatesting.com/images/b
+ug-matrix-logo.png">
+    <meta property="og:site_name" content="Bug Matrix">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bugmatrix.sqatesting.com/">
+    <meta property="twitter:title" content="Bug Matrix 🐞 – SQA Testing Tools Hub
+ | Free Software Testing Extension">
+    <meta property="twitter:description" content="Bug Matrix is your all-in-one
+browser extension for software testing, QA, security testing, and more. Access 1
+00+ testing tools, resources, and templates in one place. Free for Chrome and Fi
+refox.">
+    <meta property="twitter:image" content="https://bugmatrix.sqatesting.com/ima
+ges/bug-matrix-logo.png">
+    <meta property="twitter:creator" content="@bugmatrix">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/bug-matrix-logo.png" type="image/x-ic
+on">
+    <link rel="apple-touch-icon" href="images/bug-matrix-logo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bugmatrix.sqatesting.com/">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="Bug Matrix">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;6
+00;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;70
+0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awe
+some/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="modern-styles.css">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bug Matrix",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Windows, macOS, Linux, Chrome OS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Bug Matrix is your all-in-one browser extension that grant
+s instant access to essential testing resources—right at your fingertips!",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "156"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo"
+class="animate__animated animate__pulse animate__infinite animate__slower">
+                    <span>Bug Matrix</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="https://sqatesting.com" target="_blank">Blog</a></l
+i>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Animated Elements -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bug Matrix 🐞</h1>
+                <p class="hero-description">The ultimate SQA Testing Tools Hub f
+or software testers, QA professionals, developers, and security experts. Access
+100+ free testing tools, test data generators, security payloads, and OSINT reso
+urces—all in one place!</p>
+                <div class="hero-buttons">
+                    <a href="#browsers" class="primary-btn hover-card">Download
+Now</a>
+                    <a href="#features" class="secondary-btn hover-card">Learn M
+ore</a>
+                </div>
+                <div class="hero-tagline">
+                    <p>🔍 One Extension, Limitless Testing Power</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browser Logos Section with Enhanced Design -->
+    <section id="browsers" class="browsers-section">
+        <div class="container">
+            <h2 class="section-title">Available on All Major Browsers</h2>
+
+            <div class="browser-logos">
+                <div class="browser-logo js-tilt gradient-border">
+                    <div class="browser-logo-content">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/i
+cons/chrome/chrome-original.svg" alt="Google Chrome" class="float-element">
+                        <span>Chrome</span>
+                    </div>
+                    <a href="https://chromewebstore.google.com/detail/bug-matrix
+-%F0%9F%90%9E-%E2%80%93-sqa-testi/peelhgmemfhajlldpkamljidapnfnaob" target="_bla
+nk" class="browser-link"></a>
+                </div>
+                <div class="browser-logo js-tilt gradient-border">
+                    <div class="browser-logo-content">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/i
+cons/firefox/firefox-original.svg" alt="Mozilla Firefox" class="float-element-sl
+ow">
+                        <span>Firefox</span>
+                    </div>
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/bug-
+matrix-sqa-tools/" target="_blank" class="browser-link"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">🚀 Powerful Testing Features</h2>
+            <div class="features-grid">
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-tools feature-icon"></i>
+                        <h3>🛠️ Testing Tools Hub</h3>
+                        <p>Access a curated collection of 100+ essential testing
+ tools, frameworks, and utilities all in one place. No more searching through bo
+okmarks or remembering URLs.</p>
+                    </div>
+                </div>
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-bug feature-icon"></i>
+                        <h3>🐞 Bug Tracking & Test Data</h3>
+                        <p>Seamlessly integrate with popular bug tracking system
+s like Jira, Bugzilla, and GitHub Issues. Generate test data instantly for your
+testing scenarios.</p>
+                    </div>
+                </div>
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-clipboard-check feature-icon"></i>
+                        <h3>⚙️ Test Automation Tools</h3>
+                        <p>Quick access to Selenium, Playwright, Cypress, Puppet
+eer, and WebDriver resources. Streamline your automation testing workflow with o
+ne click.</p>
+                    </div>
+                </div>
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-tachometer-alt feature-icon"></i>
+                        <h3>⚡ API & Performance Testing</h3>
+                        <p>Connect to Postman, SoapUI, REST Assured, Swagger, JM
+eter, k6, Locust, and Lighthouse. Monitor and analyze website performance metric
+s in real-time.</p>
+                    </div>
+                </div>
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>🛡️ Security Testing & OSINT</h3>
+                        <p>Access Burp Suite, OWASP ZAP, SQLmap and other securi
+ty tools. Run vulnerability scans and utilize OSINT resources for comprehensive
+security testing.</p>
+                    </div>
+                </div>
+                <div class="feature-card js-tilt card-3d">
+                    <div class="feature-card-content">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <h3>💻 Cross-Platform Support</h3>
+                        <p>Works on Windows, macOS, and Linux. Compatible with C
+hrome, Firefox, Edge, Brave and all Chromium-based browsers. Test across differe
+nt devices and platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits glass-card" id="benefits">
+        <div class="container">
+            <h2 class="section-title">🧑‍💻 Who Can Benefit From Bug Matrix?</h2>
+            <p class="section-subtitle">Not just for testers! This extension is
+a must-have for anyone working in software development, security, and quality as
+surance.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card gradient-border js-tilt">
+                    <div class="benefit-card-content">
+                        <i class="fas fa-rocket benefit-icon float-element"></i>
+                        <h3>Software Testers & QA Engineers</h3>
+                        <p>Quickly access tools for manual testing, automation,
+API testing, performance testing, and security testing. Save time by having all
+your testing resources in one place.</p>
+                    </div>
+                </div>
+                <div class="benefit-card gradient-border js-tilt">
+                    <div class="benefit-card-content">
+                        <i class="fas fa-code benefit-icon float-element-slow"><
+/i>
+                        <h3>Developers & Engineers</h3>
+                        <p>Debug, optimize, and ensure software quality with pow
+erful utilities. Integrate seamlessly with your existing development workflow an
+d CI/CD pipelines.</p>
+                    </div>
+                </div>
+                <div class="benefit-card gradient-border js-tilt">
+                    <div class="benefit-card-content">
+                        <i class="fas fa-shield-alt benefit-icon float-element-f
+ast"></i>
+                        <h3>Security Professionals</h3>
+                        <p>Get instant access to pentesting, vulnerability scann
+ing, and forensic tools. Conduct security assessments and ethical hacking with e
+ase.</p>
+                    </div>
+                </div>
+                <div class="benefit-card gradient-border js-tilt">
+                    <div class="benefit-card-content">
+                        <i class="fas fa-chart-line benefit-icon float-element">
+</i>
+                        <h3>Project Managers & Analysts</h3>
+                        <p>Keep track of testing progress, reports, and workflow
+s effortlessly. Get valuable insights into your testing process and improve your
+ strategy over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section with Advanced Effects -->
+    <section class="cta" id="cta">
+        <div class="cta-bg-wrapper">
+            <div class="cta-bg"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Supercharge Your Testing Workflow
+?</h2>
+                <p class="cta-text">Join thousands of testers, developers, and s
+ecurity professionals who have already upgraded their workflow with Bug Matrix.
+One extension, thousands of solutions!</p>
+                <div class="cta-buttons">
+                    <a href="#browsers" class="cta-btn primary-btn hover-card">
+                        <span>Download Free Extension</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="cta-btn secondary-btn hover-card">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+                <div class="cta-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">100+</span>
+                        <span class="stat-label">Testing Tools</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">5.0</span>
+                        <span class="stat-label">User Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">100%</span>
+                        <span class="stat-label">Free Forever</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">❓ Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Bug Matrix free to use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Bug Matrix is completely free to use. We believe
+ in making quality testing tools accessible to everyone.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does Bug Matrix work offline?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most features of Bug Matrix work offline, including t
+est data generation, templates, and notes. However, some features like OSINT too
+ls require an internet connection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often is Bug Matrix updated?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We regularly update Bug Matrix with new features, too
+ls, and improvements. We aim to release updates every 4-6 weeks based on user fe
+edback and industry trends.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I suggest new features or tools?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome suggestions from our users. Yo
+u can submit feature requests through our website or contact us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">📨 Get In Touch</h2>
+            <p>Have questions or suggestions? We'd love to hear from you!</p>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/info@sqatesting.com" me
+thod="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required
+>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" requi
+red></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Messa
+ge</button>
+                    </form>
+                    <div id="index-success-message" class="success-message" styl
+e="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll get back to you as
+soon as possible.</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p>💻 𝐖𝐞𝐛𝐬𝐢𝐭𝐞</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <p><a href="https://sqatesting.com" target="_blank">🌐 ht
+tps://sqatesting.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>📩 info@sqatesting.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p><a href="https://bugmatrix.sqatesting.com" target="_b
+lank">💻 https://bugmatrix.sqatesting.com</a></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/sqatesting/?vi
+ewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/bug-matrix-logo.png" alt="Bug Matrix Logo">
+                    <span>Bug Matrix</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="documentation.html">Documentation</a></
+li>
+                            <li><a href="https://sqatesting.com" target="_blank"
+>Blog</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a>
+</li>
+                            <li><a href="terms-of-service.html">Terms of Service
+</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bug Matrix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanil
+la-tilt.min.js"></script>
+    <script>
+        // Initialize Tilt.js
+        VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+            scale: 1.05
+        });
+
+        // Preloader Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.querySelector('.preloader');
+
+            // Hide preloader after page loads
+            setTimeout(function() {
+                preloader.classList.add('fade-out');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500); // Reduced from 1000ms to 500ms for faster loading
+            }, 1000);
+
+            // ... existing code ...
+
+            // Testimonial Slider
+            const track = document.querySelector('.testimonial-track');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.querySelector('.testimonial-prev');
+            const nextBtn = document.querySelector('.testimonial-next');
+
+            if (track && cards.length > 0 && prevBtn && nextBtn) {
+            let currentIndex = 0;
+
+            // Set initial width
+            track.style.width = `${slides.length * 100}%`;
+            slides.forEach(slide => {
+                slide.style.width = `${100 / slides.length}%`;
+            });
+
+            function goToSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                track.style.transform = `translateX(-${index * (100 / slides.len
+gth)}%)`;
+
+                // Update dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+
+                currentIndex = index;
+            }
+
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentIndex - 1);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentIndex + 1);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+
+            // Auto slide
+            setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 5000);
+
+            // Animate stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            function animateStats() {
+                statNumbers.forEach(stat => {
+                    const target = parseFloat(stat.getAttribute('data-count'));
+                    const duration = 1500; // Reduced from 2000ms to 1500ms for
+faster animation
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+
+                    const updateStat = () => {
+                        current += step;
+                        if (current < target) {
+                            if (Number.isInteger(target)) {
+                                stat.textContent = Math.floor(current);
+                            } else {
+                                stat.textContent = current.toFixed(1);
+                            }
+                            requestAnimationFrame(updateStat);
+                        } else {
+                            stat.textContent = target;
+                        }
+                    };
+
+                    updateStat();
+                });
+            }
+
+            // Trigger stat animation when in viewport
+            const ctaSection = document.querySelector('.cta');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(ctaSection);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset for header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
