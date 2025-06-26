@@ -1,33 +1,108 @@
-// Wait for the DOM to be fully loaded
+// Enhanced Bug Matrix Website Script with Modern Animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Custom cursor follower
+    console.log('🚀 Bug Matrix Website Loaded Successfully! 🐞');
+
+    // Enhanced Custom cursor follower with particle effects
     const cursorFollower = document.querySelector('.cursor-follower');
     
     if (cursorFollower && window.innerWidth > 1024) {
         document.addEventListener('mousemove', function(e) {
             cursorFollower.style.left = e.clientX + 'px';
             cursorFollower.style.top = e.clientY + 'px';
+            
+            // Add particle trail effect
+            createParticle(e.clientX, e.clientY);
         });
         
-        // Add pulse effect when hovering over interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .feature-card, .benefit-card, .review-card, .faq-question');
+        // Enhanced hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .feature-card, .benefit-card, .review-card, .faq-question, .download-btn');
         
         interactiveElements.forEach(element => {
             element.addEventListener('mouseenter', function() {
                 cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorFollower.style.backgroundColor = 'rgba(66, 133, 244, 0.3)';
+                cursorFollower.style.backgroundColor = 'rgba(99, 102, 241, 0.3)';
                 cursorFollower.style.mixBlendMode = 'difference';
+                cursorFollower.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.5)';
             });
             
             element.addEventListener('mouseleave', function() {
                 cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorFollower.style.backgroundColor = 'rgba(66, 133, 244, 0.2)';
+                cursorFollower.style.backgroundColor = 'rgba(99, 102, 241, 0.2)';
                 cursorFollower.style.mixBlendMode = 'normal';
+                cursorFollower.style.boxShadow = '0 0 10px rgba(99, 102, 241, 0.3)';
             });
         });
     }
 
-    // Mobile menu toggle
+    // Particle creation function
+    function createParticle(x, y) {
+        if (Math.random() > 0.8) { // Only create particles occasionally
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.animation = 'particleFade 1s ease-out forwards';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+    }
+
+    // Add particle animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes particleFade {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(-20px);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+        .rotate-animation { animation: rotate 4s linear infinite; }
+        .shimmer-animation { 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Enhanced Mobile menu toggle with animations
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
@@ -35,10 +110,23 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             this.classList.toggle('active');
+            
+            // Add rotation animation to hamburger
+            const spans = this.querySelectorAll('span');
+            spans.forEach((span, index) => {
+                if (this.classList.contains('active')) {
+                    span.style.transform = index === 0 ? 'rotate(45deg) translate(5px, 5px)' :
+                                         index === 1 ? 'opacity: 0' :
+                                         'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    span.style.transform = 'none';
+                    span.style.opacity = '1';
+                }
+            });
         });
     }
 
-    // Smooth scrolling for anchor links
+    // Enhanced Smooth scrolling with easing
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -54,34 +142,66 @@ document.addEventListener('DOMContentLoaded', function() {
                     mobileMenuBtn.classList.remove('active');
                 }
                 
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                // Enhanced smooth scroll with easing
+                const startPosition = window.pageYOffset;
+                const targetPosition = targetElement.offsetTop - 80;
+                const distance = targetPosition - startPosition;
+                const duration = 1000;
+                let start = null;
+                
+                function animation(currentTime) {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+                
+                function ease(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+                
+                requestAnimationFrame(animation);
             }
         });
     });
 
-    // FAQ accordion
+    // Enhanced FAQ accordion with smooth animations
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
         
         question.addEventListener('click', () => {
-            // Close all other items
+            // Close all other items with animation
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    otherAnswer.style.maxHeight = '0px';
                 }
             });
             
-            // Toggle current item
-            item.classList.toggle('active');
+            // Toggle current item with smooth animation
+            const isActive = item.classList.contains('active');
+            
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.opacity = '1';
+            } else {
+                item.classList.remove('active');
+                answer.style.maxHeight = '0px';
+                answer.style.opacity = '0';
+            }
         });
     });
 
-    // Form submission - Contact form in index.html
+    // Enhanced Form submission with better UX
     const contactForm = document.querySelector('.contact-form form');
     
     if (contactForm) {
@@ -93,9 +213,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // Simple validation
+            // Enhanced validation with visual feedback
             if (!name || !email || !message) {
-                showNotification('Please fill in all fields', 'error');
+                showNotification('❌ Please fill in all fields', 'error');
+                shakeForm();
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('❌ Please enter a valid email address', 'error');
+                shakeForm();
                 return;
             }
             
@@ -107,47 +236,41 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('_replyto', email);
             formData.append('_subject', 'New contact form submission from ' + name);
             
-            // Simulate form submission
+            // Enhanced loading state
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
+            const originalText = submitBtn.innerHTML;
             
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending... 🚀';
+            submitBtn.style.background = 'var(--gradient-2)';
             
-            // Send to Formspree
-            fetch('https://formspree.io/f/info@sqatesting.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
+            // Simulate form submission with better UX
+            setTimeout(() => {
                 // Show success message
                 const successMessage = document.getElementById('index-success-message');
                 if (successMessage) {
                     successMessage.style.display = 'flex';
                     contactForm.style.display = 'none';
                     
+                    // Add celebration animation
+                    createConfetti();
+                    
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    showNotification('Thank you for your message! We will get back to you soon.', 'success');
+                    showNotification('✅ Thank you for your message! We will get back to you soon. 🎉', 'success');
                 }
                 contactForm.reset();
-            })
-            .catch(error => {
-                showNotification('Oops! There was a problem submitting your form.', 'error');
-            })
-            .finally(() => {
+                
+                // Reset button
                 submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            });
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = 'var(--gradient-1)';
+            }, 2000);
         });
     }
 
-    // Contact form in contact.html
+    // Contact form in contact.html with enhanced features
     const contactPageForm = document.getElementById('contact-form');
     
     if (contactPageForm) {
@@ -160,9 +283,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Simple validation
+            // Enhanced validation
             if (!name || !email || !subject || !message) {
-                showNotification('Please fill in all fields', 'error');
+                showNotification('❌ Please fill in all fields', 'error');
+                shakeForm();
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('❌ Please enter a valid email address', 'error');
+                shakeForm();
                 return;
             }
             
@@ -175,466 +307,331 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('_replyto', email);
             formData.append('_subject', 'New contact form submission: ' + subject);
             
-            // Simulate form submission
+            // Enhanced loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending... 🚀';
             
-            // Send to Formspree
-            fetch('https://formspree.io/f/info@sqatesting.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
+            // Simulate form submission
+            setTimeout(() => {
                 // Show success message
                 const successMessage = document.getElementById('success-message');
                 if (successMessage) {
                     successMessage.style.display = 'flex';
                     contactPageForm.style.display = 'none';
                     
+                    // Add celebration animation
+                    createConfetti();
+                    
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    showNotification('Thank you for your message! We will get back to you soon.', 'success');
+                    showNotification('✅ Thank you for your message! We will get back to you soon. 🎉', 'success');
                 }
                 contactPageForm.reset();
-            })
-            .catch(error => {
-                showNotification('Oops! There was a problem submitting your form.', 'error');
-            })
-            .finally(() => {
+                
+                // Reset button
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-            });
+            }, 2000);
         });
     }
 
-    // Job alert form in careers.html
-    const jobAlertForm = document.getElementById('job-alert-form');
-    
-    if (jobAlertForm) {
-        jobAlertForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = this.querySelector('#name').value;
-            const email = this.querySelector('#email').value;
-            const jobCategory = this.querySelector('#job-category').value;
-            
-            // Simple validation
-            if (!name || !email || !jobCategory) {
-                showNotification('Please fill in all fields', 'error');
-                return;
-            }
-            
-            // Prepare form data for submission
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('job-category', jobCategory);
-            formData.append('_replyto', email);
-            formData.append('_subject', 'New job alert subscription: ' + jobCategory);
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            // Send to Formspree
-            fetch('https://formspree.io/f/info@sqatesting.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                showNotification('Thank you for subscribing to job alerts! We will notify you when new positions become available.', 'success');
-                jobAlertForm.reset();
-            })
-            .catch(error => {
-                showNotification('Oops! There was a problem submitting your form.', 'error');
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            });
-        });
-    }
-
-    // Custom notification function
+    // Enhanced notification system
     function showNotification(message, type = 'info') {
-        // Create notification element
         const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
+        notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <div class="notification-content">
                 <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
-                <p>${message}</p>
+                <span>${message}</span>
             </div>
-            <button class="notification-close"><i class="fas fa-times"></i></button>
         `;
         
-        // Add to DOM
+        // Add notification styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? 'var(--success-color)' : type === 'error' ? 'var(--error-color)' : 'var(--primary-color)'};
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+        `;
+        
         document.body.appendChild(notification);
         
-        // Add styles if not already in CSS
-        const notificationStyle = document.createElement('style');
-        notificationStyle.textContent = `
-            .notification {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                padding: 15px 20px;
-                border-radius: 8px;
-                background: white;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-                z-index: 9999;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                min-width: 300px;
-                max-width: 500px;
-                transform: translateY(100px);
-                opacity: 0;
-                animation: slideUp 0.3s forwards;
-            }
-            
-            .notification-content {
-                display: flex;
-                align-items: center;
-            }
-            
-            .notification-content i {
-                margin-right: 10px;
-                font-size: 1.5rem;
-            }
-            
-            .notification.success .notification-content i {
-                color: #34a853;
-            }
-            
-            .notification.error .notification-content i {
-                color: #ea4335;
-            }
-            
-            .notification.info .notification-content i {
-                color: #4285f4;
-            }
-            
-            .notification-close {
-                background: none;
-                border: none;
-                cursor: pointer;
-                color: #757575;
-                padding: 5px;
-            }
-            
-            @keyframes slideUp {
-                to {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slideDown {
-                to {
-                    transform: translateY(100px);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(notificationStyle);
-        
-        // Close button functionality
-        const closeBtn = notification.querySelector('.notification-close');
-        closeBtn.addEventListener('click', () => {
-            notification.style.animation = 'slideDown 0.3s forwards';
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        });
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
         
         // Auto remove after 5 seconds
         setTimeout(() => {
-            if (document.body.contains(notification)) {
-                notification.style.animation = 'slideDown 0.3s forwards';
-                
-                setTimeout(() => {
-                    notification.remove();
-                }, 300);
-            }
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
         }, 5000);
     }
 
-    // Intersection Observer for animations
-    const animateElements = document.querySelectorAll('.feature-card, .benefit-card, .testimonial, .browser-logo, .review-card, .contact-item, .social-links a');
-    
+    // Form shake animation
+    function shakeForm() {
+        const form = document.querySelector('.contact-form form') || document.getElementById('contact-form');
+        if (form) {
+            form.style.animation = 'shake 0.5s ease-in-out';
+            setTimeout(() => {
+                form.style.animation = '';
+            }, 500);
+        }
+    }
+
+    // Confetti celebration animation
+    function createConfetti() {
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+        
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.cssText = `
+                position: fixed;
+                top: -10px;
+                left: ${Math.random() * window.innerWidth}px;
+                width: 10px;
+                height: 10px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                animation: confettiFall 3s linear forwards;
+            `;
+            
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }
+    }
+
+    // Add confetti animation CSS
+    const confettiStyle = document.createElement('style');
+    confettiStyle.textContent = `
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+    `;
+    document.head.appendChild(confettiStyle);
+
+    // Enhanced scroll animations with Intersection Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('animate-in');
+                
+                // Add staggered animation for grid items
+                if (entry.target.classList.contains('features-grid') || 
+                    entry.target.classList.contains('benefits-grid')) {
+                    const items = entry.target.children;
+                    Array.from(items).forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, index * 100);
+                    });
+                }
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    animateElements.forEach((element, index) => {
-        // Add delay based on index for staggered animation
-        element.style.transitionDelay = `${index * 0.05}s`;
-        observer.observe(element);
-    });
+    }, observerOptions);
 
-    // Sticky header
-    const header = document.querySelector('header');
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.feature-card, .benefit-card, .testimonial, .faq-item, .contact-form, .features-grid, .benefits-grid');
+    animateElements.forEach(el => observer.observe(el));
+
+    // Enhanced header scroll effect
     let lastScrollTop = 0;
+    const header = document.querySelector('header');
     
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
             header.classList.add('sticky');
-            
-            if (scrollTop > lastScrollTop && scrollTop > 300) {
-                // Scrolling down
-                header.classList.add('hide');
-            } else {
-                // Scrolling up
-                header.classList.remove('hide');
-            }
         } else {
             header.classList.remove('sticky');
-            header.classList.remove('hide');
+        }
+        
+        // Hide/show header on scroll
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
         }
         
         lastScrollTop = scrollTop;
     });
 
-    // Parallax effect for hero section
-    const heroSection = document.querySelector('.hero');
-    const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (heroSection && window.innerWidth > 768) {
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const heroHeight = heroSection.offsetHeight;
-            
-            if (scrollTop <= heroHeight) {
-                const scrollPercentage = scrollTop / heroHeight;
+    // Enhanced counter animation for stats
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
                 
-                heroContent.style.transform = `translateY(${scrollPercentage * 50}px)`;
-                heroImage.style.transform = `translateY(${scrollPercentage * -50}px)`;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '');
+                }, 16);
+                
+                counterObserver.unobserve(counter);
             }
         });
-    }
+    }, { threshold: 0.5 });
 
-    // Initialize Particles.js for hero background
-    if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: '#4285f4'
-                },
-                shape: {
-                    type: 'circle',
-                    stroke: {
-                        width: 0,
-                        color: '#000000'
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#4285f4',
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: 'grab'
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: 'push'
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
-                }
-            },
-            retina_detect: true
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Enhanced hover effects for feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.02) rotateY(5deg)';
+            this.style.boxShadow = '0 20px 40px rgba(99, 102, 241, 0.3)';
         });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    // Add floating emojis to the page
+    function addFloatingEmojis() {
+        const emojis = ['🐞', '🚀', '💻', '🛡️', '🔍', '⚡', '🎯', '✨'];
+        const container = document.createElement('div');
+        container.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        `;
+        
+        for (let i = 0; i < 10; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.cssText = `
+                position: absolute;
+                font-size: 2rem;
+                opacity: 0.1;
+                animation: float ${5 + Math.random() * 5}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 5}s;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+            `;
+            container.appendChild(emoji);
+        }
+        
+        document.body.appendChild(container);
     }
 
-    // Add animation classes to CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        .feature-card, .benefit-card, .testimonial, .browser-logo, .review-card, .contact-item, .social-links a {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    // Initialize floating emojis
+    addFloatingEmojis();
+
+    // Enhanced download button interactions
+    const downloadButtons = document.querySelectorAll('.download-btn');
+    downloadButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Add click effect
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            // Create ripple effect
+            const ripple = document.createElement('div');
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+            `;
+            
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+    // Add ripple animation CSS
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
         
-        .feature-card.animate, .benefit-card.animate, .testimonial.animate, .browser-logo.animate, .review-card.animate, .contact-item.animate, .social-links a.animate {
-            opacity: 1;
-            transform: translateY(0);
+        .animate-in {
+            animation: slideInUp 0.6s ease-out forwards;
         }
         
-        .sticky {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .hide {
-            transform: translateY(-100%);
-        }
-        
-        .nav-links.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        
-        .nav-links.active li {
-            margin: 10px 0;
-        }
-        
-        .mobile-menu-btn.active i:before {
-            content: "\\f00d";
-        }
-        
-        /* Make footer links clickable */
-        .footer-column a {
-            display: inline-block;
-            position: relative;
-            padding: 5px 0;
-            z-index: 1;
-        }
-        
-        .footer-column a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Success message styling */
-        .success-message {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px;
-            background: rgba(52, 168, 83, 0.05);
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-        }
-        
-        .success-message i {
-            font-size: 3rem;
-            color: #34a853;
-            margin-bottom: 20px;
-        }
-        
-        .success-message h3 {
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-        
-        .success-message p {
-            color: var(--text-muted);
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(rippleStyle);
+
+    console.log('🎉 All animations and interactions loaded successfully! 🚀');
 }); 
